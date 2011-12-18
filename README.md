@@ -11,7 +11,7 @@ I took these items from the site on December 18, 2011.
 
 Sass
 ----
-If you don't know what Sass is yet, you're welcome: http://sass-lang.com/
+Better CSS: http://sass-lang.com/
 
 Bourbon
 -------
@@ -19,13 +19,17 @@ thoughbot's set of Sass mixins: https://github.com/thoughtbot/bourbon
 
 Flutie
 ------
-Default styles: https://github.com/thoughtbot/flutie
+Default styles for your site/application: https://github.com/thoughtbot/flutie
 
-Using Sass/Bourbon/Flutie
+Jekyll
+------
+The file structure is set up to use Jekyll, but you need to install the gem to use it properly: https://github.com/mojombo/jekyll/wiki/install
+Here's how to use Jekyll: https://github.com/mojombo/jekyll/wiki/usage
+
+Using Sass/Bourbon/Flutie and Jekyll
 -------------------------
 Watch Sass stylesheet and require Bourbon. This will also pull Flutie styles into your main stylesheet:
 sass --watch stylesheets/sass:stylesheets -r ./stylesheets/sass/bourbon/lib/bourbon.rb
 
-Jekyll
-------
-This should be useable with Jekyll, just follow steps found at the Jekyll GitHub repo linked here: https://github.com/mojombo/jekyll.
+Start the Jekyll server: jekyll --server --auto
+You can view your running application at http://localhost:4000
