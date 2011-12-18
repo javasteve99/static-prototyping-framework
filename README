@@ -1,0 +1,4 @@
+Template for starting static sites including Sass, Bourbon and Flutie
+
+Watch Sass stylesheet and require Bourbon:
+	sass --watch stylesheets/sass:stylesheets -r ./stylesheets/sass/bourbon/lib/bourbon.rb
