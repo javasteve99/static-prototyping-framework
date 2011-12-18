@@ -1,4 +1,14 @@
 Template for starting static sites including Sass, Bourbon and Flutie
 
-Watch Sass stylesheet and require Bourbon:
+* Includes some HTML5 Boilerplate goodness in the index.html file, plus Modernizr.js library - http://html5boilerplate.com/ 
+	Items were added from version 2.0, which was originally authored on August 10th, 2011.
+	I took these items from the site on December 18, 2011.
+
+* Watch Sass stylesheet and require Bourbon:
 	sass --watch stylesheets/sass:stylesheets -r ./stylesheets/sass/bourbon/lib/bourbon.rb
+
+* Flutie
+	This is already included in application.scss and should be pulled in as long as you remember to start watching Sass as listed above when you are working.
+
+* Jekyll
+	This should be useable with Jekyll pretty much out of the box, just follow steps to install the gem found at the Jekyll GitHub repo linked here: https://github.com/mojombo/jekyll.
