@@ -17,4 +17,4 @@ Default styles: https://github.com/thoughtbot/flutie
 sass --watch stylesheets/sass:stylesheets -r ./stylesheets/sass/bourbon/lib/bourbon.rb
 
 * Jekyll
-This should be useable with Jekyll pretty much out of the box, just follow steps to install the gem found at the Jekyll GitHub repo linked here: https://github.com/mojombo/jekyll.
+This should be useable with Jekyll, just follow steps found at the Jekyll GitHub repo linked here: https://github.com/mojombo/jekyll.
