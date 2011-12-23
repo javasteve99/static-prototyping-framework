@@ -1,7 +1,7 @@
 Static Site Starter
 ===================
 
-A template for starting static sites including Sass, Bourbon and Flutie.
+Template for starting static sites including Sass, Bourbon and Twitter Bootstrap
 
 HTML5 Boilerplate
 -----------------
@@ -19,18 +19,18 @@ Bourbon
 -------
 thoughbot's set of [Sass mixins](https://github.com/thoughtbot/bourbon).
 
-Flutie
+Twitter Bootstrap
 ------
-Default styles for your site/application. For more, see [the source](https://github.com/thoughtbot/flutie).
+Base CSS toolkit: http://twitter.github.com/bootstrap/
 
 Jekyll
 ------
 The file structure is set up to use Jekyll. To use it, [install the gem](https://github.com/mojombo/jekyll/wiki/install).
 For more on Jekyll, read [the guide](https://github.com/mojombo/jekyll/wiki/usage).
 
-Using Sass/Bourbon/Flutie and Jekyll
+Using Sass/Bourbon and Jekyll
 -------------------------
-Watch Sass stylesheet and require Bourbon. This will also pull Flutie styles into your main stylesheet:
+Watch Sass stylesheet and require Bourbon. This will also pull Twitter Bootstrap styles into your main stylesheet:
 
     sass --watch stylesheets/sass:stylesheets -r ./stylesheets/sass/bourbon/lib/bourbon.rb
 

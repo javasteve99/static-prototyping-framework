@@ -1,2 +1,14 @@
-@import 'flutie';
+/* basic styles from Twitter's Bootstrap, with light modifications - http://twitter.github.com/bootstrap/ */
+@import 'reset', 'scaffolding', 'typography', 'forms', 'tables';
+
+/* Sass mixins from Bourbon by thoughtbot - https://github.com/thoughtbot/bourbon */
 @import 'bourbon/bourbon';
+
+/* Base stylesheets for using with Sass */
+@import 'variables', 'extends';
+
+/* Suggested starter stylesheets for your work */
+@import 'screen', 'mobile';
+
+/* Basic print styles from HTML5 Boilerplate - http://html5boilerplate.com/ */
+@import 'print';
