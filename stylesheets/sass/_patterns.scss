@@ -12,12 +12,12 @@
 }
 .topbar a {
   color: #bfbfbf;
-  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+  text-shadow: 0 -1px 0 rgba(#000, 0.25);
 }
 .topbar h3 a:hover, .topbar .brand:hover, .topbar ul .active > a {
   background-color: #333;
-  background-color: rgba(255, 255, 255, 0.05);
-  color: #ffffff;
+  background-color: rgba(#000, 0.05);
+  color: #fff;
   text-decoration: none;
 }
 .topbar h3 {
@@ -28,7 +28,7 @@
   display: block;
   padding: 8px 20px 12px;
   margin-left: -20px;
-  color: #ffffff;
+  color: #fff;
   font-size: 20px;
   font-weight: 200;
   line-height: 1;
@@ -39,7 +39,7 @@
 }
 .topbar p a:hover {
   background-color: transparent;
-  color: #ffffff;
+  color: #fff;
 }
 .topbar form {
   float: left;
@@ -60,20 +60,12 @@
   font-weight: 13px;
   line-height: 1;
   padding: 4px 9px;
-  color: #ffffff;
-  color: rgba(255, 255, 255, 0.75);
+  color: #fff;
+  color: rgba(#000, 0.75);
   border: 1px solid #111;
-  -webkit-border-radius: 4px;
-  -moz-border-radius: 4px;
-  border-radius: 4px;
-  -webkit-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1), 0 1px 0px rgba(255, 255, 255, 0.25);
-  -moz-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1), 0 1px 0px rgba(255, 255, 255, 0.25);
-  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1), 0 1px 0px rgba(255, 255, 255, 0.25);
-  -webkit-transition: none;
-  -moz-transition: none;
-  -ms-transition: none;
-  -o-transition: none;
-  transition: none;
+  @include border-radius(4px);
+  @include box-shadow(inset 0 1px 2px rgba(#000, 0.1), 0 1px 0px rgba(#fff, 0.25));
+  @include transition(none);
 }
 .topbar input:-moz-placeholder {
   color: #e6e6e6;
@@ -83,35 +75,21 @@
 }
 .topbar input:hover {
   background-color: #bfbfbf;
-  background-color: rgba(255, 255, 255, 0.5);
-  color: #ffffff;
+  background-color: rgba(#fff, 0.5);
+  color: #fff;
 }
 .topbar input:focus, .topbar input.focused {
   outline: 0;
-  background-color: #ffffff;
+  background-color: #fff;
   color: #404040;
-  text-shadow: 0 1px 0 #ffffff;
+  text-shadow: 0 1px 0 #fff;
   border: 0;
   padding: 5px 10px;
-  -webkit-box-shadow: 0 0 3px rgba(0, 0, 0, 0.15);
-  -moz-box-shadow: 0 0 3px rgba(0, 0, 0, 0.15);
-  box-shadow: 0 0 3px rgba(0, 0, 0, 0.15);
+  @include box-shadow(0 0 3px rgba(#000, 0.15));
 }
 .topbar-inner, .topbar .fill {
-  background-color: #222;
-  background-color: #222222;
-  background-repeat: repeat-x;
-  background-image: -khtml-gradient(linear, left top, left bottom, from(#333333), to(#222222));
-  background-image: -moz-linear-gradient(top, #333333, #222222);
-  background-image: -ms-linear-gradient(top, #333333, #222222);
-  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #333333), color-stop(100%, #222222));
-  background-image: -webkit-linear-gradient(top, #333333, #222222);
-  background-image: -o-linear-gradient(top, #333333, #222222);
-  background-image: linear-gradient(top, #333333, #222222);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#333333', endColorstr='#222222', GradientType=0);
-  -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25), inset 0 -1px 0 rgba(0, 0, 0, 0.1);
-  -moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25), inset 0 -1px 0 rgba(0, 0, 0, 0.1);
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25), inset 0 -1px 0 rgba(0, 0, 0, 0.1);
+  @include linear-gradient(top, #333 0%, #222 100%);
+  @include box-shadow(0 1px 3px rgba(#000, 0.25), inset 0 -1px 0 rgba(#000, 0.1));
 }
 .topbar div > ul, .nav {
   display: block;
@@ -132,12 +110,12 @@
   text-decoration: none;
 }
 .topbar div > ul a:hover, .nav a:hover {
-  color: #ffffff;
+  color: #fff;
   text-decoration: none;
 }
 .topbar div > ul .active > a, .nav .active > a {
   background-color: #222;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(#000, 0.5);
 }
 .topbar div > ul.secondary-nav, .nav.secondary-nav {
   float: right;
@@ -160,7 +138,7 @@
 .topbar div > ul .dropdown.open .dropdown-toggle,
 .nav .dropdown.open .dropdown-toggle {
   background: #444;
-  background: rgba(255, 255, 255, 0.05);
+  background: rgba(#fff, 0.05);
 }
 .topbar div > ul .menu-dropdown,
 .nav .menu-dropdown,
@@ -176,7 +154,7 @@
 .nav .menu-dropdown .dropdown-toggle,
 .topbar div > ul .dropdown-menu .dropdown-toggle,
 .nav .dropdown-menu .dropdown-toggle {
-  color: #ffffff;
+  color: #fff;
 }
 .topbar div > ul .menu-dropdown a.menu.open,
 .nav .menu-dropdown a.menu.open,
@@ -187,36 +165,27 @@
 .topbar div > ul .dropdown-menu .dropdown-toggle.open,
 .nav .dropdown-menu .dropdown-toggle.open {
   background: #444;
-  background: rgba(255, 255, 255, 0.05);
+  background: rgba(#fff, 0.05);
 }
 .topbar div > ul .menu-dropdown li a,
 .nav .menu-dropdown li a,
 .topbar div > ul .dropdown-menu li a,
 .nav .dropdown-menu li a {
   color: #999;
-  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.5);
+  text-shadow: 0 1px 0 rgba(#000, 0.5);
 }
 .topbar div > ul .menu-dropdown li a:hover,
 .nav .menu-dropdown li a:hover,
 .topbar div > ul .dropdown-menu li a:hover,
 .nav .dropdown-menu li a:hover {
-  background-color: #191919;
-  background-repeat: repeat-x;
-  background-image: -khtml-gradient(linear, left top, left bottom, from(#292929), to(#191919));
-  background-image: -moz-linear-gradient(top, #292929, #191919);
-  background-image: -ms-linear-gradient(top, #292929, #191919);
-  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #292929), color-stop(100%, #191919));
-  background-image: -webkit-linear-gradient(top, #292929, #191919);
-  background-image: -o-linear-gradient(top, #292929, #191919);
-  background-image: linear-gradient(top, #292929, #191919);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#292929', endColorstr='#191919', GradientType=0);
-  color: #ffffff;
+  @include linear-gradient(top, #292929 0%, #191919 100%);
+  color: #fff;
 }
 .topbar div > ul .menu-dropdown .active a,
 .nav .menu-dropdown .active a,
 .topbar div > ul .dropdown-menu .active a,
 .nav .dropdown-menu .active a {
-  color: #ffffff;
+  color: #fff;
 }
 .topbar div > ul .menu-dropdown .divider,
 .nav .menu-dropdown .divider,
@@ -242,14 +211,14 @@ a.menu:after, .dropdown-toggle:after {
   margin-left: 4px;
   border-left: 4px solid transparent;
   border-right: 4px solid transparent;
-  border-top: 4px solid #ffffff;
+  border-top: 4px solid #fff;
   filter: alpha(opacity=50);
   -khtml-opacity: 0.5;
   -moz-opacity: 0.5;
   opacity: 0.5;
 }
 .menu-dropdown, .dropdown-menu {
-  background-color: #ffffff;
+  background-color: #fff;
   float: left;
   display: none;
   position: absolute;
@@ -263,15 +232,11 @@ a.menu:after, .dropdown-toggle:after {
   padding: 6px 0;
   zoom: 1;
   border-color: #999;
-  border-color: rgba(0, 0, 0, 0.2);
+  border-color: rgba(#000, 0.2);
   border-style: solid;
   border-width: 0 1px 1px;
-  -webkit-border-radius: 0 0 6px 6px;
-  -moz-border-radius: 0 0 6px 6px;
-  border-radius: 0 0 6px 6px;
-  -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-  -moz-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  @include border-radius(0 0 6px 6px);
+  @include box-shadow(0 2px 4px rgba(#000, 0.2));
   -webkit-background-clip: padding-box;
   -moz-background-clip: padding-box;
   background-clip: padding-box;
@@ -286,7 +251,7 @@ a.menu:after, .dropdown-toggle:after {
   margin: 5px 0;
   overflow: hidden;
   background-color: #eee;
-  border-bottom: 1px solid #ffffff;
+  border-bottom: 1px solid #fff;
 }
 .topbar .dropdown-menu a, .dropdown-menu a {
   display: block;
@@ -295,35 +260,24 @@ a.menu:after, .dropdown-toggle:after {
   font-weight: normal;
   line-height: 18px;
   color: #808080;
-  text-shadow: 0 1px 0 #ffffff;
+  text-shadow: 0 1px 0 #fff;
 }
 .topbar .dropdown-menu a:hover,
 .dropdown-menu a:hover,
 .topbar .dropdown-menu a.hover,
 .dropdown-menu a.hover {
-  background-color: #dddddd;
-  background-repeat: repeat-x;
-  background-image: -khtml-gradient(linear, left top, left bottom, from(#eeeeee), to(#dddddd));
-  background-image: -moz-linear-gradient(top, #eeeeee, #dddddd);
-  background-image: -ms-linear-gradient(top, #eeeeee, #dddddd);
-  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #eeeeee), color-stop(100%, #dddddd));
-  background-image: -webkit-linear-gradient(top, #eeeeee, #dddddd);
-  background-image: -o-linear-gradient(top, #eeeeee, #dddddd);
-  background-image: linear-gradient(top, #eeeeee, #dddddd);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#eeeeee', endColorstr='#dddddd', GradientType=0);
+  @include linear-gradient(top, #eee 0%, #ddd 100%);
   color: #404040;
   text-decoration: none;
-  -webkit-box-shadow: inset 0 1px 0 rgba(0, 0, 0, 0.025), inset 0 -1px rgba(0, 0, 0, 0.025);
-  -moz-box-shadow: inset 0 1px 0 rgba(0, 0, 0, 0.025), inset 0 -1px rgba(0, 0, 0, 0.025);
-  box-shadow: inset 0 1px 0 rgba(0, 0, 0, 0.025), inset 0 -1px rgba(0, 0, 0, 0.025);
+  @include box-shadow(inset 0 1px 0 rgba(#000, 0.025), inset 0 -1px rgba(#000, 0.025));
 }
 .open .menu,
 .dropdown.open .menu,
 .open .dropdown-toggle,
 .dropdown.open .dropdown-toggle {
-  color: #ffffff;
+  color: #fff;
   background: #ccc;
-  background: rgba(0, 0, 0, 0.3);
+  background: rgba(#000, 0.3);
 }
 .open .menu-dropdown,
 .dropdown.open .menu-dropdown,
@@ -368,9 +322,7 @@ a.menu:after, .dropdown-toggle:after {
   margin-right: 2px;
   line-height: 34px;
   border: 1px solid transparent;
-  -webkit-border-radius: 4px 4px 0 0;
-  -moz-border-radius: 4px 4px 0 0;
-  border-radius: 4px 4px 0 0;
+  @include border-radius(4px 4px 0 0);
 }
 .tabs > li > a:hover {
   text-decoration: none;
@@ -379,7 +331,7 @@ a.menu:after, .dropdown-toggle:after {
 }
 .tabs .active > a, .tabs .active > a:hover {
   color: #808080;
-  background-color: #ffffff;
+  background-color: #fff;
   border: 1px solid #ddd;
   border-bottom-color: transparent;
   cursor: default;
@@ -387,9 +339,7 @@ a.menu:after, .dropdown-toggle:after {
 .tabs .menu-dropdown, .tabs .dropdown-menu {
   top: 35px;
   border-width: 1px;
-  -webkit-border-radius: 0 6px 6px 6px;
-  -moz-border-radius: 0 6px 6px 6px;
-  border-radius: 0 6px 6px 6px;
+  @include border-radius(0 6px 6px 6px);
 }
 .tabs a.menu:after, .tabs .dropdown-toggle:after {
   border-top-color: #999;
@@ -406,20 +356,18 @@ a.menu:after, .dropdown-toggle:after {
   margin: 5px 3px 5px 0;
   padding: 0 15px;
   line-height: 30px;
-  text-shadow: 0 1px 1px #ffffff;
-  -webkit-border-radius: 15px;
-  -moz-border-radius: 15px;
-  border-radius: 15px;
+  text-shadow: 0 1px 1px #fff;
+  @include border-radius(15px);
 }
 .pills a:hover {
-  color: #ffffff;
+  color: #fff;
   text-decoration: none;
-  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.25);
+  text-shadow: 0 1px 1px rgba(#000, 0.25);
   background-color: #00438a;
 }
 .pills .active a {
-  color: #ffffff;
-  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.25);
+  color: #fff;
+  text-shadow: 0 1px 1px rgba(#000, 0.25);
   background-color: #0069d6;
 }
 .pills-vertical > li {
@@ -437,27 +385,14 @@ a.menu:after, .dropdown-toggle:after {
 .breadcrumb {
   padding: 7px 14px;
   margin: 0 0 18px;
-  background-color: #f5f5f5;
-  background-repeat: repeat-x;
-  background-image: -khtml-gradient(linear, left top, left bottom, from(#ffffff), to(#f5f5f5));
-  background-image: -moz-linear-gradient(top, #ffffff, #f5f5f5);
-  background-image: -ms-linear-gradient(top, #ffffff, #f5f5f5);
-  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #ffffff), color-stop(100%, #f5f5f5));
-  background-image: -webkit-linear-gradient(top, #ffffff, #f5f5f5);
-  background-image: -o-linear-gradient(top, #ffffff, #f5f5f5);
-  background-image: linear-gradient(top, #ffffff, #f5f5f5);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#f5f5f5', GradientType=0);
+  @include linear-gradient(top, #fff 0%, #f5f5f5 100%);
   border: 1px solid #ddd;
-  -webkit-border-radius: 3px;
-  -moz-border-radius: 3px;
-  border-radius: 3px;
-  -webkit-box-shadow: inset 0 1px 0 #ffffff;
-  -moz-box-shadow: inset 0 1px 0 #ffffff;
-  box-shadow: inset 0 1px 0 #ffffff;
+  @include border-radius(3px);
+  @include box-shadow(inset 0 1px 0 #fff);
 }
 .breadcrumb li {
   display: inline;
-  text-shadow: 0 1px 0 #ffffff;
+  text-shadow: 0 1px 0 #fff;
 }
 .breadcrumb .divider {
   padding: 0 5px;
@@ -470,9 +405,7 @@ a.menu:after, .dropdown-toggle:after {
   background-color: #f5f5f5;
   margin-bottom: 30px;
   padding: 60px;
-  -webkit-border-radius: 6px;
-  -moz-border-radius: 6px;
-  border-radius: 6px;
+  @include border-radius(6px);
 }
 .hero-unit h1 {
   margin-bottom: 0;
@@ -493,9 +426,7 @@ footer {
 .page-header {
   margin-bottom: 17px;
   border-bottom: 1px solid #ddd;
-  -webkit-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
-  -moz-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
-  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+  @include box-shadow(0 1px 0 rgba(#000, 0.5));
 }
 .page-header h1 {
   margin-bottom: 8px;
@@ -516,90 +447,46 @@ footer {
 .alert-message.info,
 .btn.info:hover,
 .alert-message.info:hover {
-  color: #ffffff;
+  color: #fff;
 }
 .btn .close, .alert-message .close {
-  font-family: Arial, sans-serif;
   line-height: 18px;
 }
 .btn.danger,
 .alert-message.danger,
 .btn.error,
 .alert-message.error {
-  background-color: #c43c35;
-  background-repeat: repeat-x;
-  background-image: -khtml-gradient(linear, left top, left bottom, from(#ee5f5b), to(#c43c35));
-  background-image: -moz-linear-gradient(top, #ee5f5b, #c43c35);
-  background-image: -ms-linear-gradient(top, #ee5f5b, #c43c35);
-  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #ee5f5b), color-stop(100%, #c43c35));
-  background-image: -webkit-linear-gradient(top, #ee5f5b, #c43c35);
-  background-image: -o-linear-gradient(top, #ee5f5b, #c43c35);
-  background-image: linear-gradient(top, #ee5f5b, #c43c35);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ee5f5b', endColorstr='#c43c35', GradientType=0);
-  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+  @include linear-gradient(top, #ee5f5b 0%, #c43c35);
+  text-shadow: 0 -1px 0 rgba(#000, 0.25);
   border-color: #c43c35 #c43c35 #882a25;
-  border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+  border-color: rgba(#000, 0.1) rgba(#000, 0.1) rgba(#000, 0.25);
 }
 .btn.success, .alert-message.success {
-  background-color: #57a957;
-  background-repeat: repeat-x;
-  background-image: -khtml-gradient(linear, left top, left bottom, from(#62c462), to(#57a957));
-  background-image: -moz-linear-gradient(top, #62c462, #57a957);
-  background-image: -ms-linear-gradient(top, #62c462, #57a957);
-  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #62c462), color-stop(100%, #57a957));
-  background-image: -webkit-linear-gradient(top, #62c462, #57a957);
-  background-image: -o-linear-gradient(top, #62c462, #57a957);
-  background-image: linear-gradient(top, #62c462, #57a957);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#62c462', endColorstr='#57a957', GradientType=0);
-  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+  @include linear-gradient(top, #62c462 0%, #57a957 100%);
+  text-shadow: 0 -1px 0 rgba(#000, 0.25);
   border-color: #57a957 #57a957 #3d773d;
-  border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+  border-color: rgba(#000, 0.1) rgba(#000, 0.1) rgba(#000, 0.25);
 }
 .btn.info, .alert-message.info {
-  background-color: #339bb9;
-  background-repeat: repeat-x;
-  background-image: -khtml-gradient(linear, left top, left bottom, from(#5bc0de), to(#339bb9));
-  background-image: -moz-linear-gradient(top, #5bc0de, #339bb9);
-  background-image: -ms-linear-gradient(top, #5bc0de, #339bb9);
-  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #5bc0de), color-stop(100%, #339bb9));
-  background-image: -webkit-linear-gradient(top, #5bc0de, #339bb9);
-  background-image: -o-linear-gradient(top, #5bc0de, #339bb9);
-  background-image: linear-gradient(top, #5bc0de, #339bb9);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#5bc0de', endColorstr='#339bb9', GradientType=0);
-  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+  @include linear-gradient(top, #5bc0de 0%, #339bb9 100%);
+  text-shadow: 0 -1px 0 rgba(#000, 0.25);
   border-color: #339bb9 #339bb9 #22697d;
-  border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+  border-color: rgba(#000, 0.1) rgba(#000, 0.1) rgba(#000, 0.25);
 }
 .btn {
   cursor: pointer;
-  display: inline-block;
-  background-color: #e6e6e6;
-  background-repeat: no-repeat;
-  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#ffffff), color-stop(25%, #ffffff), to(#e6e6e6));
-  background-image: -webkit-linear-gradient(#ffffff, #ffffff 25%, #e6e6e6);
-  background-image: -moz-linear-gradient(top, #ffffff, #ffffff 25%, #e6e6e6);
-  background-image: -ms-linear-gradient(#ffffff, #ffffff 25%, #e6e6e6);
-  background-image: -o-linear-gradient(#ffffff, #ffffff 25%, #e6e6e6);
-  background-image: linear-gradient(#ffffff, #ffffff 25%, #e6e6e6);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#e6e6e6', GradientType=0);
+  @include inline-block();
+  @include linear-gradient(top, #fff 0%, #fff 25%, #e6e6e6 100%);
   padding: 5px 14px 6px;
-  text-shadow: 0 1px 1px rgba(255, 255, 255, 0.75);
+  text-shadow: 0 1px 1px rgba(#fff, 0.75);
   color: #333;
   font-size: 13px;
   line-height: normal;
   border: 1px solid #ccc;
   border-bottom-color: #bbb;
-  -webkit-border-radius: 4px;
-  -moz-border-radius: 4px;
-  border-radius: 4px;
-  -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
-  -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
-  -webkit-transition: 0.1s linear all;
-  -moz-transition: 0.1s linear all;
-  -ms-transition: 0.1s linear all;
-  -o-transition: 0.1s linear all;
-  transition: 0.1s linear all;
+  @include border-radius(4px);
+  @include box-shadow(inset 0 1px 0 rgba(#fff, 0.2), 0 1px 2px rgba(#000, 0.05));
+  @include transition(0.1s linear all);
 }
 .btn:hover {
   background-position: 0 -15px;
@@ -610,25 +497,14 @@ footer {
   outline: 1px dotted #666;
 }
 .btn.primary {
-  color: #ffffff;
-  background-color: #0064cd;
-  background-repeat: repeat-x;
-  background-image: -khtml-gradient(linear, left top, left bottom, from(#049cdb), to(#0064cd));
-  background-image: -moz-linear-gradient(top, #049cdb, #0064cd);
-  background-image: -ms-linear-gradient(top, #049cdb, #0064cd);
-  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #049cdb), color-stop(100%, #0064cd));
-  background-image: -webkit-linear-gradient(top, #049cdb, #0064cd);
-  background-image: -o-linear-gradient(top, #049cdb, #0064cd);
-  background-image: linear-gradient(top, #049cdb, #0064cd);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#049cdb', endColorstr='#0064cd', GradientType=0);
-  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+  color: #fff;
+  @include linear-gradient(top, #049cdb 0%, #0064cd 100%);
+  text-shadow: 0 -1px 0 rgba(#000, 0.25);
   border-color: #0064cd #0064cd #003f81;
-  border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+  border-color: rgba(#000, 0.1) rgba(#000, 0.1) rgba(#000, 0.25);
 }
 .btn.active, .btn:active {
-  -webkit-box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.25), 0 1px 2px rgba(0, 0, 0, 0.05);
-  -moz-box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.25), 0 1px 2px rgba(0, 0, 0, 0.05);
-  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.25), 0 1px 2px rgba(0, 0, 0, 0.05);
+  @include box-shadow(inset 0 2px 4px rgba(#000, 0.25), 0 1px 2px rgba(#000, 0.05));
 }
 .btn.disabled {
   cursor: default;
@@ -638,9 +514,7 @@ footer {
   -khtml-opacity: 0.65;
   -moz-opacity: 0.65;
   opacity: 0.65;
-  -webkit-box-shadow: none;
-  -moz-box-shadow: none;
-  box-shadow: none;
+  @include box-shadow(none);
 }
 .btn[disabled] {
   cursor: default;
@@ -650,17 +524,13 @@ footer {
   -khtml-opacity: 0.65;
   -moz-opacity: 0.65;
   opacity: 0.65;
-  -webkit-box-shadow: none;
-  -moz-box-shadow: none;
-  box-shadow: none;
+  @include box-shadow(none);
 }
 .btn.large {
   font-size: 15px;
   line-height: normal;
   padding: 9px 14px 9px;
-  -webkit-border-radius: 6px;
-  -moz-border-radius: 6px;
-  border-radius: 6px;
+  @include border-radius(6px);
 }
 .btn.small {
   padding: 7px 9px 7px;
@@ -675,18 +545,18 @@ button.btn::-moz-focus-inner, input[type=submit].btn::-moz-focus-inner {
 }
 .close {
   float: right;
-  color: #000000;
+  color: #000;
   font-size: 20px;
   font-weight: bold;
   line-height: 13.5px;
-  text-shadow: 0 1px 0 #ffffff;
+  text-shadow: 0 1px 0 #fff;
   filter: alpha(opacity=25);
   -khtml-opacity: 0.25;
   -moz-opacity: 0.25;
   opacity: 0.25;
 }
 .close:hover {
-  color: #000000;
+  color: #000;
   text-decoration: none;
   filter: alpha(opacity=40);
   -khtml-opacity: 0.4;
@@ -698,28 +568,15 @@ button.btn::-moz-focus-inner, input[type=submit].btn::-moz-focus-inner {
   padding: 7px 15px;
   margin-bottom: 18px;
   color: #404040;
-  background-color: #eedc94;
-  background-repeat: repeat-x;
-  background-image: -khtml-gradient(linear, left top, left bottom, from(#fceec1), to(#eedc94));
-  background-image: -moz-linear-gradient(top, #fceec1, #eedc94);
-  background-image: -ms-linear-gradient(top, #fceec1, #eedc94);
-  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #fceec1), color-stop(100%, #eedc94));
-  background-image: -webkit-linear-gradient(top, #fceec1, #eedc94);
-  background-image: -o-linear-gradient(top, #fceec1, #eedc94);
-  background-image: linear-gradient(top, #fceec1, #eedc94);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fceec1', endColorstr='#eedc94', GradientType=0);
-  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+  @include linear-gradient(top, #fceec1 0%, #eedc94 100%);
+  text-shadow: 0 -1px 0 rgba(#000, 0.25);
   border-color: #eedc94 #eedc94 #e4c652;
-  border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
-  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+  border-color: rgba(#000, 0.1) rgba(#000, 0.1) rgba(#000, 0.25);
+  text-shadow: 0 1px 0 rgba(#fff, 0.5);
   border-width: 1px;
   border-style: solid;
-  -webkit-border-radius: 4px;
-  -moz-border-radius: 4px;
-  border-radius: 4px;
-  -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.25);
-  -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.25);
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.25);
+  @include border-radius(4px);
+  @include box-shadow(inset 0 1px 0 rgba(#fff, 0.25));
 }
 .alert-message .close {
   margin-top: 1px;
@@ -757,9 +614,7 @@ button.btn::-moz-focus-inner, input[type=submit].btn::-moz-focus-inner {
   filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
   padding: 14px;
   border-color: #fceec1;
-  -webkit-box-shadow: none;
-  -moz-box-shadow: none;
-  box-shadow: none;
+  @include box-shadow(none);
 }
 .alert-message.block-message ul, .alert-message.block-message p {
   margin-right: 30px;
@@ -775,7 +630,7 @@ button.btn::-moz-focus-inner, input[type=submit].btn::-moz-focus-inner {
 }
 .alert-message.block-message.error, .alert-message.block-message.success, .alert-message.block-message.info {
   color: #404040;
-  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+  text-shadow: 0 1px 0 rgba(#fff, 0.5);
 }
 .alert-message.block-message.error {
   background-color: #fddfde;
@@ -803,13 +658,9 @@ button.btn::-moz-focus-inner, input[type=submit].btn::-moz-focus-inner {
   float: left;
   margin: 0;
   border: 1px solid #ddd;
-  border: 1px solid rgba(0, 0, 0, 0.15);
-  -webkit-border-radius: 3px;
-  -moz-border-radius: 3px;
-  border-radius: 3px;
-  -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
-  -moz-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(#000, 0.15);
+  @include border-radius(3px);
+  @include box-shadow(0 1px 2px rgba(#000, 0.05));
 }
 .pagination li {
   display: inline;
@@ -820,7 +671,7 @@ button.btn::-moz-focus-inner, input[type=submit].btn::-moz-focus-inner {
   line-height: 34px;
   border-right: 1px solid;
   border-right-color: #ddd;
-  border-right-color: rgba(0, 0, 0, 0.15);
+  border-right-color: rgba(#000, 0.15);
   *border-right-color: #ddd;
   /* IE6-7 */
 
@@ -843,19 +694,15 @@ button.btn::-moz-focus-inner, input[type=submit].btn::-moz-focus-inner {
   min-height: 20px;
   border: 1px solid #eee;
   border: 1px solid rgba(0, 0, 0, 0.05);
-  -webkit-border-radius: 4px;
-  -moz-border-radius: 4px;
-  border-radius: 4px;
-  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
-  -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
-  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
+  @include border-radius(4px);
+  @include box-shadow(inset 0 1px 1px rgba(#000, 0.05));
 }
 .well blockquote {
   border-color: #ddd;
-  border-color: rgba(0, 0, 0, 0.15);
+  border-color: rgba(#000, 0.15);
 }
 .modal-backdrop {
-  background-color: #000000;
+  background-color: #000;
   position: fixed;
   top: 0;
   left: 0;
@@ -881,18 +728,14 @@ button.btn::-moz-focus-inner, input[type=submit].btn::-moz-focus-inner {
   overflow: auto;
   width: 560px;
   margin: -250px 0 0 -280px;
-  background-color: #ffffff;
+  background-color: #fff;
   border: 1px solid #999;
-  border: 1px solid rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(#000, 0.3);
   *border: 1px solid #999;
   /* IE6-7 */
 
-  -webkit-border-radius: 6px;
-  -moz-border-radius: 6px;
-  border-radius: 6px;
-  -webkit-box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3);
-  -moz-box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3);
-  box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3);
+  @include border-radius(6px);
+  @include box-shadow(0 3px 7px rgba(#000, 0.3));
   -webkit-background-clip: padding-box;
   -moz-background-clip: padding-box;
   background-clip: padding-box;
@@ -901,11 +744,7 @@ button.btn::-moz-focus-inner, input[type=submit].btn::-moz-focus-inner {
   margin-top: 7px;
 }
 .modal.fade {
-  -webkit-transition: opacity .3s linear, top .3s ease-out;
-  -moz-transition: opacity .3s linear, top .3s ease-out;
-  -ms-transition: opacity .3s linear, top .3s ease-out;
-  -o-transition: opacity .3s linear, top .3s ease-out;
-  transition: opacity .3s linear, top .3s ease-out;
+  @include transition(opacity .3s linear, top .3s ease-out);
   top: -25%;
 }
 .modal.fade.in {
@@ -925,12 +764,8 @@ button.btn::-moz-focus-inner, input[type=submit].btn::-moz-focus-inner {
   background-color: #f5f5f5;
   padding: 14px 15px 15px;
   border-top: 1px solid #ddd;
-  -webkit-border-radius: 0 0 6px 6px;
-  -moz-border-radius: 0 0 6px 6px;
-  border-radius: 0 0 6px 6px;
-  -webkit-box-shadow: inset 0 1px 0 #ffffff;
-  -moz-box-shadow: inset 0 1px 0 #ffffff;
-  box-shadow: inset 0 1px 0 #ffffff;
+  @include border-radius(0 0 6px 6px);
+  @include box-shadow(inset 0 1px 0 #fff);
   zoom: 1;
   margin-bottom: 0;
 }
@@ -973,7 +808,7 @@ button.btn::-moz-focus-inner, input[type=submit].btn::-moz-focus-inner {
   margin-left: -5px;
   border-left: 5px solid transparent;
   border-right: 5px solid transparent;
-  border-top: 5px solid #000000;
+  border-top: 5px solid #000;
 }
 .twipsy.left .twipsy-arrow {
   top: 50%;
@@ -981,7 +816,7 @@ button.btn::-moz-focus-inner, input[type=submit].btn::-moz-focus-inner {
   margin-top: -5px;
   border-top: 5px solid transparent;
   border-bottom: 5px solid transparent;
-  border-left: 5px solid #000000;
+  border-left: 5px solid #000;
 }
 .twipsy.below .twipsy-arrow {
   top: 0;
@@ -989,7 +824,7 @@ button.btn::-moz-focus-inner, input[type=submit].btn::-moz-focus-inner {
   margin-left: -5px;
   border-left: 5px solid transparent;
   border-right: 5px solid transparent;
-  border-bottom: 5px solid #000000;
+  border-bottom: 5px solid #000;
 }
 .twipsy.right .twipsy-arrow {
   top: 50%;
@@ -997,18 +832,16 @@ button.btn::-moz-focus-inner, input[type=submit].btn::-moz-focus-inner {
   margin-top: -5px;
   border-top: 5px solid transparent;
   border-bottom: 5px solid transparent;
-  border-right: 5px solid #000000;
+  border-right: 5px solid #000;
 }
 .twipsy-inner {
   padding: 3px 8px;
-  background-color: #000000;
+  background-color: #000;
   color: white;
   text-align: center;
   max-width: 200px;
   text-decoration: none;
-  -webkit-border-radius: 4px;
-  -moz-border-radius: 4px;
-  border-radius: 4px;
+  @include border-radius(4px);
 }
 .twipsy-arrow {
   position: absolute;
@@ -1029,7 +862,7 @@ button.btn::-moz-focus-inner, input[type=submit].btn::-moz-focus-inner {
   margin-left: -5px;
   border-left: 5px solid transparent;
   border-right: 5px solid transparent;
-  border-top: 5px solid #000000;
+  border-top: 5px solid #000;
 }
 .popover.right .arrow {
   top: 50%;
@@ -1037,7 +870,7 @@ button.btn::-moz-focus-inner, input[type=submit].btn::-moz-focus-inner {
   margin-top: -5px;
   border-top: 5px solid transparent;
   border-bottom: 5px solid transparent;
-  border-right: 5px solid #000000;
+  border-right: 5px solid #000;
 }
 .popover.below .arrow {
   top: 0;
@@ -1045,7 +878,7 @@ button.btn::-moz-focus-inner, input[type=submit].btn::-moz-focus-inner {
   margin-left: -5px;
   border-left: 5px solid transparent;
   border-right: 5px solid transparent;
-  border-bottom: 5px solid #000000;
+  border-bottom: 5px solid #000;
 }
 .popover.left .arrow {
   top: 50%;
@@ -1053,7 +886,7 @@ button.btn::-moz-focus-inner, input[type=submit].btn::-moz-focus-inner {
   margin-top: -5px;
   border-top: 5px solid transparent;
   border-bottom: 5px solid transparent;
-  border-left: 5px solid #000000;
+  border-left: 5px solid #000;
 }
 .popover .arrow {
   position: absolute;
@@ -1061,33 +894,25 @@ button.btn::-moz-focus-inner, input[type=submit].btn::-moz-focus-inner {
   height: 0;
 }
 .popover .inner {
-  background: #000000;
-  background: rgba(0, 0, 0, 0.8);
+  background: #000;
+  background: rgba(#000, 0.8);
   padding: 3px;
   overflow: hidden;
   width: 280px;
-  -webkit-border-radius: 6px;
-  -moz-border-radius: 6px;
-  border-radius: 6px;
-  -webkit-box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3);
-  -moz-box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3);
-  box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3);
+  @include border-radius(6px);
+  @include box-shadow(0 3px 7px rgba(#000, 0.3));
 }
 .popover .title {
   background-color: #f5f5f5;
   padding: 9px 15px;
   line-height: 1;
-  -webkit-border-radius: 3px 3px 0 0;
-  -moz-border-radius: 3px 3px 0 0;
-  border-radius: 3px 3px 0 0;
+  @include border-radius(3px 3px 0 0);
   border-bottom: 1px solid #eee;
 }
 .popover .content {
-  background-color: #ffffff;
+  background-color: #fff;
   padding: 14px;
-  -webkit-border-radius: 0 0 3px 3px;
-  -moz-border-radius: 0 0 3px 3px;
-  border-radius: 0 0 3px 3px;
+  @include border-radius(0 0 3px 3px);
   -webkit-background-clip: padding-box;
   -moz-background-clip: padding-box;
   background-clip: padding-box;
@@ -1096,11 +921,7 @@ button.btn::-moz-focus-inner, input[type=submit].btn::-moz-focus-inner {
   margin-bottom: 0;
 }
 .fade {
-  -webkit-transition: opacity 0.15s linear;
-  -moz-transition: opacity 0.15s linear;
-  -ms-transition: opacity 0.15s linear;
-  -o-transition: opacity 0.15s linear;
-  transition: opacity 0.15s linear;
+  @include transition(opacity 0.15s linear);
   opacity: 0;
 }
 .fade.in {
@@ -1110,13 +931,11 @@ button.btn::-moz-focus-inner, input[type=submit].btn::-moz-focus-inner {
   padding: 1px 3px 2px;
   font-size: 9.75px;
   font-weight: bold;
-  color: #ffffff;
+  color: #fff;
   text-transform: uppercase;
   white-space: nowrap;
   background-color: #bfbfbf;
-  -webkit-border-radius: 3px;
-  -moz-border-radius: 3px;
-  border-radius: 3px;
+  @include border-radius(3px);
   text-shadow: none;
 }
 .label.important {
@@ -1152,19 +971,13 @@ button.btn::-moz-focus-inner, input[type=submit].btn::-moz-focus-inner {
   padding: 4px;
   margin: 0 0 18px 20px;
   border: 1px solid #ddd;
-  -webkit-border-radius: 4px;
-  -moz-border-radius: 4px;
-  border-radius: 4px;
-  -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075);
-  -moz-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075);
-  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075);
+  @include border-radius(4px);
+  @include box-shadow(0 1px 1px rgba(#000, 0.075));
 }
 .media-grid a img {
   display: block;
 }
 .media-grid a:hover {
   border-color: #0069d6;
-  -webkit-box-shadow: 0 1px 4px rgba(0, 105, 214, 0.25);
-  -moz-box-shadow: 0 1px 4px rgba(0, 105, 214, 0.25);
-  box-shadow: 0 1px 4px rgba(0, 105, 214, 0.25);
+  @include box-shadow(0 1px 4px rgba(#0069d6, 0.25));
 }

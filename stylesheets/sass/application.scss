@@ -1,8 +1,8 @@
-/* basic styles from Twitter's Bootstrap, with light modifications - http://twitter.github.com/bootstrap/ */
-@import 'reset', 'scaffolding', 'typography', 'forms', 'tables', 'patterns';
-
 /* Sass mixins from Bourbon by thoughtbot - https://github.com/thoughtbot/bourbon */
 @import 'bourbon/bourbon';
+
+/* basic styles from Twitter's Bootstrap, with light modifications - http://twitter.github.com/bootstrap/ */
+@import 'reset', 'scaffolding', 'typography', 'forms', 'tables', 'patterns';
 
 /* Base stylesheets for using with Sass */
 @import 'variables', 'extends';
