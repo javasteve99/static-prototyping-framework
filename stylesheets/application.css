@@ -605,16 +605,16 @@ textarea {
   color: #bfbfbf; }
 
 input, textarea {
-  -webkit-transition-property: border, linear, 0.2s;
-  -moz-transition-property: border, linear, 0.2s;
-  -ms-transition-property: border, linear, 0.2s;
-  -o-transition-property: border, linear, 0.2s;
-  transition-property: border, linear, 0.2s;
-  -webkit-transition-duration: box-shadow, linear, 0.2s;
-  -moz-transition-duration: box-shadow, linear, 0.2s;
-  -ms-transition-duration: box-shadow, linear, 0.2s;
-  -o-transition-duration: box-shadow, linear, 0.2s;
-  transition-duration: box-shadow, linear, 0.2s;
+  -webkit-transition-property: all, linear, 0.2s;
+  -moz-transition-property: all, linear, 0.2s;
+  -ms-transition-property: all, linear, 0.2s;
+  -o-transition-property: all, linear, 0.2s;
+  transition-property: all, linear, 0.2s;
+  -webkit-transition-duration: 0.15s;
+  -moz-transition-duration: 0.15s;
+  -ms-transition-duration: 0.15s;
+  -o-transition-duration: 0.15s;
+  transition-duration: 0.15s;
   -webkit-transition-timing-function: ease-out;
   -moz-transition-timing-function: ease-out;
   -ms-transition-timing-function: ease-out;
