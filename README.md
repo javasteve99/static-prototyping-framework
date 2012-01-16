@@ -1,27 +1,27 @@
 Static Site Starter
 ===================
 
-Template for starting static sites including Sass, Bourbon and Twitter Bootstrap
+A template for rapid prototyping of static sites and applications. It includes parts of HTML5 Boilerplate, Bootstrap CSS and JS, Sass and Bourbon. This is not intended to be used for production sites in it's default format. It pulls in a LOT of CSS and JS. If you wish to use it for production sites, you should delete unused styles and javascript.
 
 HTML5 Boilerplate
 -----------------
 Includes some [HTML5 Boilerplate](http://html5boilerplate.com/) goodness in the index.html file, plus the [Modernizr.js](http://www.modernizr.com/) library.
 
-Items were added from version 2.0, which was originally authored on August 10th, 2011.
+Twitter Bootstrap CSS
+------
+Includes [Bootstrap] (http://twitter.github.com/bootstrap/), Twitter's CSS toolkit.
 
-I took these items from the site on December 18, 2011.
+Twitter Bootstrap JS libraries
+------
+Includes the [Bootstrap JS libraries] (http://twitter.github.com/bootstrap/javascript.html) to extend functionality.
 
 Sass
 ----
-Better CSS. For more, see [the Sass homepage](http://sass-lang.com/).
+Sass is better CSS and is include to simplify rapid front-end development. For more, see [the Sass homepage](http://sass-lang.com/).
 
 Bourbon
 -------
-thoughbot's set of [Sass mixins](https://github.com/thoughtbot/bourbon).
-
-Twitter Bootstrap
-------
-Base CSS toolkit: http://twitter.github.com/bootstrap/
+Bourbon is thoughbot's set of Sass mixins, intended to make the use of CSS3 properties faster. For more, see [Bourbon's GitHub repo](https://github.com/thoughtbot/bourbon).
 
 Jekyll
 ------
