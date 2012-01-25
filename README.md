@@ -5,7 +5,7 @@ A template for rapid prototyping of static sites and applications. It includes p
 
 HTML5 Boilerplate
 -----------------
-Includes some [HTML5 Boilerplate](http://html5boilerplate.com/) goodness in the index.html file, plus the [Modernizr.js](http://www.modernizr.com/) library.
+Includes some [HTML5 Boilerplate](http://html5boilerplate.com/) goodness in the default.html layout file, plus the [Modernizr.js](http://www.modernizr.com/) library.
 
 Twitter Bootstrap CSS
 ------
