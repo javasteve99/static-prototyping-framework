@@ -1,7 +1,7 @@
 Static Site Starter
 ===================
 
-A template for rapid prototyping of static sites and applications. It includes parts of HTML5 Boilerplate, Bootstrap CSS and JS, Sass and Bourbon. This is not intended to be used for production sites in its default format. It pulls in a LOT of CSS and JS. If you wish to use it for production sites, you should delete unused styles and javascript.
+A template for rapid prototyping of static sites and applications. It includes parts of HTML5 Boilerplate, Bootstrap CSS and JS, Sass and Bourbon. This is not intended to be used for production sites in its default format. It pulls in a LOT of CSS and JS and is full of slightly-more-than-necessary comments. If you wish to use it for production sites, you should delete unused styles and javascript and erase any comments that seem obvious to you.
 
 HTML5 Boilerplate
 -----------------
