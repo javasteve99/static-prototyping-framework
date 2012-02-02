@@ -19,19 +19,19 @@ LESS
 ----
 LESS is a dynamic stylesheet language that makes better CSS. For more, see [the LESS homepage](http://lesscss.org/).
 
-Jekyll
-------
-The file structure is set up to use Jekyll. To use it, [install the gem](https://github.com/mojombo/jekyll/wiki/install).
-For more on Jekyll, read [the guide](https://github.com/mojombo/jekyll/wiki/usage).
-
-Using LESS and Jekyll
--------------------------
 Rather than use the JS file to compile .less files on the server, I set this up to take advantage of compiling locally into a single .css file. To do so, I recommend the unofficial Mac [LESS](http://incident57.com/less/) app.
 
 Once the app is installed, drag the root folder onto the app interface to start watching .less files in your project. Then, right-click on the application.less file and set the app to compile it's output to the application.css file one level up. You only need to do this once, as long as the LESS app is open it will recompile whenever you save.
 
 You could also do this from the command line by following the documentation, but the app makes life much easier.
 
-Start the Jekyll server by running this command: jekyll --server --auto
+Jekyll
+------
+The file structure is set up to use Jekyll. To use it, [install the gem](https://github.com/mojombo/jekyll/wiki/install).
+For more on Jekyll, read [the guide](https://github.com/mojombo/jekyll/wiki/usage).
+
+Start the Jekyll server by running this command: 
+
+jekyll --server --auto
 
 You can view your running application at [http://localhost:4000](http://localhost:4000).
