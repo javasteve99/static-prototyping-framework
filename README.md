@@ -11,15 +11,13 @@ Twitter Bootstrap CSS
 ------
 Includes a stripped down and modified for Sass version of [Bootstrap] (http://twitter.github.com/bootstrap/), Twitter's CSS toolkit. Default styles for rapid development.
 
-Sass and Bourbon
-----------------
+Sass
+----
 Sass is a dynamic stylesheet language that makes writing CSS easier and faster. For more, see [the Sass homepage](http://sass-lang.com/).
 
-Bourbon is a set of Sass mixins that makes writing CSS3 properties as simple as possible. For more, see it's GitHub repo.
+To use Sass, you have to watch your .scss files from the Terminal and compile their output into the application.css file in the /stylesheets directory. To do so, use the Terminal to cd into the root directory of this repo, then run this command:
 
-To use Sass and Bourbon, you have to watch them from the Terminal and compile their output into the application.css file in the /stylesheets directory. To do so, use the Terminal to cd into the root directory of this repo, then run this command:
-
-sass --watch stylesheets/sass:stylesheets -r ./stylesheets/sass/bourbon/lib/bourbon.rb
+<code>sass --watch stylesheets/sass:stylesheets</code>
 
 Jekyll
 ------
@@ -28,6 +26,6 @@ For more on Jekyll, read [the guide](https://github.com/mojombo/jekyll/wiki/usag
 
 Start the Jekyll server by running this command in Terminal from the root directory of this repo:
 
-jekyll --server --auto
+<code>jekyll --server --auto</code>
 
 You can view your running application at [http://localhost:4000](http://localhost:4000).
