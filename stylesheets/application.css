@@ -1,22 +1,4 @@
 /* ==========================================================================
-Utility Mixins
-========================================================================== */
-.clearfix {
-  *zoom: 1; }
-  .clearfix:before, .clearfix:after {
-    display: table;
-    content: ""; }
-  .clearfix:after {
-    clear: both; }
-
-/* ==========================================================================
-CSS3 Mixins (Combination of Bourbon by thoughtbot and Bootstrap mixins)
-========================================================================== */
-/* ==========================================================================
-Variables adapted from Twitter Bootstrap
-https://github.com/twitter/bootstrap/
-========================================================================== */
-/* ==========================================================================
 Reset adapted from Twitter Bootstrap
 https://github.com/twitter/bootstrap/
 ========================================================================== */
@@ -123,9 +105,6 @@ textarea {
 /* ==========================================================================
 Typography adapted from Twitter Bootstrap
 https://github.com/twitter/bootstrap/
-
-Also includes styling for code blocks,
-which is a separate sheet in Bootstrap
 ========================================================================== */
 body {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; }
