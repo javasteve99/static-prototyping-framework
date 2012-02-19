@@ -139,6 +139,7 @@ https://github.com/twitter/bootstrap/
 }
 // Warning appears are orange
 .btn-warning {
+  @extend .btn;
   @include linear-gradient(top, lighten($orange, 15%) 0%, $orange 100%);
   border: 1px solid $orange;
 
@@ -157,6 +158,7 @@ https://github.com/twitter/bootstrap/
 }
 // Danger and error appear as red
 .btn-danger {
+  @extend .btn;
   @include linear-gradient(top, lighten($red, 15%) 0%, $red 100%);
   border: 1px solid $red;
 
@@ -175,6 +177,7 @@ https://github.com/twitter/bootstrap/
 }
 // Success appears as green
 .btn-success {
+  @extend .btn;
   @include linear-gradient(top, lighten($green, 15%) 0%, $green 100%);
   border: 1px solid $green;
 
@@ -193,9 +196,10 @@ https://github.com/twitter/bootstrap/
 }
 // Info appears as a neutral blue
 .btn-info {
+  @extend .btn;
   @include linear-gradient(top, lighten($blue, 15%) 0%, $blue 100%);
   border: 1px solid $blue;
-  
+
   &:hover {
     @include linear-gradient(top, $blue 0%, $blue 100%);
     @include transition(all 0.1s linear);
@@ -211,6 +215,7 @@ https://github.com/twitter/bootstrap/
 }
 // Inverse appears as dark gray
 .btn-inverse {
+  @extend .btn;
   @include linear-gradient(top, lighten($grayDarker, 15%) 0%, $grayDarker 100%);
   border: 1px solid $grayDarker;
 
