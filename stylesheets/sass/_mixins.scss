@@ -26,6 +26,12 @@ Utility Mixins
   *vertical-align: auto;
 }
 
+// Opacity, extend to IE
+@mixin opacity ($value) {
+  opacity: $value;
+  filter: alpha(opacity=($value * 100));
+}
+
 
 /* ==========================================================================
 CSS3 Mixins (Combination of Bourbon by thoughtbot and Bootstrap mixins)
