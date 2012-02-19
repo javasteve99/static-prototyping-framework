@@ -5,32 +5,28 @@ A template for rapid prototyping of static sites and applications. It's built on
 
 HTML5 Boilerplate
 -----------------
-Includes some [HTML5 Boilerplate](http://html5boilerplate.com/) goodness in the default.html layout file, plus the [Modernizr.js](http://www.modernizr.com/) library. I erased a lot of the comments from the index file, you should refer to HTML5 Boilerplates documentation is you're not sure what something is. I also combined the HTML5 Boilerplate file structure with the Jekyll file structure.
+Includes some [HTML5 Boilerplate](http://html5boilerplate.com/) goodness in the default.html layout file, plus the [Modernizr.js](http://www.modernizr.com/) library. I erased a lot of the comments from the index file, you should refer to HTML5 Boilerplate's documentation if you're not sure what something is. I also combined the HTML5 Boilerplate file structure with the Jekyll file structure.
 
 Twitter Bootstrap CSS
 ------
-Includes [Bootstrap] (http://twitter.github.com/bootstrap/), Twitter's CSS toolkit. Default styles for rapid development, and LESS mixins for rapid use of CSS3 and other properties.
+Includes a stripped down and modified for Sass version of [Bootstrap] (http://twitter.github.com/bootstrap/), Twitter's CSS toolkit. Default styles for rapid development.
 
-Twitter Bootstrap JS libraries
-------
-Includes the [Bootstrap JS libraries] (http://twitter.github.com/bootstrap/javascript.html) in javascripts/plugins.js to extend functionality.
+Sass and Bourbon
+----------------
+Sass is a dynamic stylesheet language that makes writing CSS easier and faster. For more, see [the Sass homepage](http://sass-lang.com/).
 
-LESS
-----
-LESS is a dynamic stylesheet language that makes better CSS. For more, see [the LESS homepage](http://lesscss.org/).
+Bourbon is a set of Sass mixins that makes writing CSS3 properties as simple as possible. For more, see it's GitHub repo.
 
-Rather than use the JS file to compile .less files on the server, I set this up to take advantage of compiling locally into a single .css file. To do so, I recommend the unofficial Mac [LESS](http://incident57.com/less/) app.
+To use Sass and Bourbon, you have to watch them from the Terminal and compile their output into the application.css file in the /stylesheets directory. To do so, use the Terminal to cd into the root directory of this repo, then run this command:
 
-Once the app is installed, drag the root folder onto the app interface to start watching .less files in your project. Then, right-click on the application.less file and set the app to compile it's output to the application.css file one level up. You only need to do this once, as long as the LESS app is open it will recompile whenever you save.
-
-You could also do this from the command line by following the documentation, but the app makes life much easier.
+sass --watch stylesheets/sass:stylesheets -r ./stylesheets/sass/bourbon/lib/bourbon.rb
 
 Jekyll
 ------
 The file structure is set up to use Jekyll. To use it, [install the gem](https://github.com/mojombo/jekyll/wiki/install).
 For more on Jekyll, read [the guide](https://github.com/mojombo/jekyll/wiki/usage).
 
-Start the Jekyll server by running this command: 
+Start the Jekyll server by running this command in Terminal from the root directory of this repo:
 
 jekyll --server --auto
 
