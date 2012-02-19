@@ -52,13 +52,31 @@ $infoText:                    $blue;
 $infoBackground:              lighten($blue, 75%);
 $infoBorder:                  lighten($blue, 50%);
 
-// Default 940px grid
-$gridColumns:                 12;
-$gridColumnWidth:             60px;
-$gridGutterWidth:             20px;
-$gridRowWidth:                ($gridColumns * $gridColumnWidth) + ($gridGutterWidth * ($gridColumns - 1));
+// 12 column 940px grid using Bourbon's grid function =========================================================
+$gw-column:                   60px;
+$gw-gutter:                   20px;
 
-// Fluid grid
-$fluidGridColumnWidth:        6.382978723%;
-$fluidGridGutterWidth:        2.127659574%;
+//  div {
+//    width: grid-width(4);         // returns 300px;
+//    margin-left: $gw-gutter;      // returns 20px;
+//  }
 
+
+// Elliot Jay Stocks' Responsive grid using Bourbon's flex grid function ======================================
+// http://elliotjaystocks.com/blog/a-better-photoshop-grid-for-responsive-web-design/
+$fg-column:                   150px;
+$fg-gutter:                   20px;
+$fg-max-columns:              6;
+
+// This function takes the fluid grid equation (target / context = result) and uses columns to help define each.
+//
+//  div {
+//    width: flex-grid(4);          // returns (660px / 1000px) = 66%;
+//    margin-left: flex-gutter();   // returns (20px / 1000px) = 2%;
+//
+//    p {
+//      width: flex-grid(2, 4);     // returns (320px / 660px) = 48.484848%;
+//      float: left;
+//      margin: flex-gutter(4);     // returns (20px / 660px) = 3.030303%;
+//    }
+//  }
