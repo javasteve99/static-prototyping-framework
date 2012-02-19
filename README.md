@@ -1,7 +1,7 @@
 Static Prototyping Framework
 ===================
 
-A template for rapid prototyping of static sites and applications. It's built on Jekyll and uses the HTML5 Boilerplate index.html and file structure, and Bootstrap CSS and JS. It pulls in a LOT of CSS and JS by default. If you wish to use it for production sites, you should delete unused styles and javascript.
+A template for rapid prototyping of static sites and applications. It's built on Jekyll and uses the HTML5 Boilerplate index.html and file structure, a modified subset of Twitter's Bootstrap CSS, and Sass.
 
 HTML5 Boilerplate
 -----------------
