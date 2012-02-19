@@ -1,7 +1,7 @@
 Static Prototyping Framework
 ============================
 
-A template for rapid prototyping of static sites and applications. It's built on Jekyll and uses the HTML5 Boilerplate index.html and file structure, a modified subset of Twitter's Bootstrap CSS, and Sass.
+A template for rapid prototyping of static sites and applications. It's built on Jekyll and uses the HTML5 Boilerplate index.html and file structure, a modified subset of Twitter's Bootstrap CSS, and Sass with Bourbon mixins.
 
 Jekyll
 ------
@@ -31,17 +31,20 @@ I've included a stripped-down version of [Bootstrap] (http://twitter.github.com/
 
 These files represent what I would consider the basic default styles for most projects. If you prefer LESS or want more defaults, just remove the /stylesheets/sass directory and replace it with Bootstrap's /less directory. This project does not intend to support LESS usage, so if you go that route you're on your own.
 
-###Mixins
-The mixins stylesheet includes a subset of [Bourbon](https://github.com/thoughtbot/bourbon) by thoughtbot. I've dropped all the non-CSS3 related functions and variables, and removed any convenience mixins that aren't written according to the CSS3 spec. My rationale here is to be ultra-vanilla. You can only write code that's as close to the CSS3 spec as possible. If you want the full Bourbon toolkit, just delete my mixins and install Bourbon by following their instructions.
+###Bourbon
+[Bourbon](https://github.com/thoughtbot/bourbon) by thoughtbot is included to allow the rapid use of CSS3 properties plus some other nice extras.
 
-I've also included some utility mixins for code that I find myself frequently repeating or that requires some extra lines beyond the spec to extend support to more browsers.
+Artwork directory
+-----------------
+
+I've included empty PSDs with the proper names and sizes for creating all the right Apple touch icons and a favicon. Read [this article](http://mathiasbynens.be/notes/touch-icons) for more info.
 
 Working with this repo
 ----------------------
 
-To use Sass, you have to watch your .scss files from the Terminal and compile their output into the application.css file in the /stylesheets directory. To do so, use the Terminal to cd into the root directory of this repo, then run this command:
+To use Sass and require Bourbon, you have to watch your .scss files from the Terminal and compile their output into the application.css file in the /stylesheets directory. To do so, use the Terminal to cd into the root directory of this repo, then run this command:
 
-<code>sass --watch stylesheets/sass:stylesheets</code>
+<code>sass --watch stylesheets/sass:stylesheets -r ./stylesheets/sass/bourbon/lib/bourbon.rb</code>
 
 Start the Jekyll server by running this command in Terminal from the root directory of this repo:
 

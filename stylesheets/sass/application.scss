@@ -1,4 +1,5 @@
-@import 'mixins', 'variables';  // Mixins for CSS3 properties and variables should come first
+@import 'bourbon/bourbon';      // Include Bourbon to make CSS3+ extras easier
+@import 'mixins', 'variables';  // Mixins and variables should come first
 @import 'reset';                // Reset HTML elements next
 @import 'type';                 // Then set your basic typography up
 @import 'forms', 'tables';      // Followed by common elements of forms and tables
