@@ -29,10 +29,10 @@ I've included a stripped-down version of [Bootstrap] (http://twitter.github.com/
 * Tables
 * Buttons
 
-These files represent what I would consider the basic default styles for most projects. If you prefer LESS or want more defaults, just remove the /stylesheets/sass directory and replace it with Bootstrap's /less directory. This project does not intend to support LESS usage, so if you go that route you're on your own. 
+These files represent what I would consider the basic default styles for most projects. If you prefer LESS or want more defaults, just remove the /stylesheets/sass directory and replace it with Bootstrap's /less directory. This project does not intend to support LESS usage, so if you go that route you're on your own.
 
-**Mixins**
-The mixins stylsheet includes a subset of [Bourbon](https://github.com/thoughtbot/bourbon) by thoughtbot. I've dropped all the non-CSS3 related functions and variables, and removed any convenience mixins that aren't written according the to the CSS3 spec. My rationale here is to be ultra-vanilla. You can only write code that's as close to the CSS3 spec as possible. If you want the full Bourbon toolkit, just delete my mixins and install Bourbon by following their instructions.
+###Mixins
+The mixins stylesheet includes a subset of [Bourbon](https://github.com/thoughtbot/bourbon) by thoughtbot. I've dropped all the non-CSS3 related functions and variables, and removed any convenience mixins that aren't written according the to the CSS3 spec. My rationale here is to be ultra-vanilla. You can only write code that's as close to the CSS3 spec as possible. If you want the full Bourbon toolkit, just delete my mixins and install Bourbon by following their instructions.
 
 I've also included some utility mixins for code that I find myself frequently repeating or that requires some extra lines beyond the spec to extend support to more browsers.
 
