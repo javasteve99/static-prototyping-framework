@@ -65,7 +65,7 @@ table {
   border: 1px solid $grayLighter;
   border-collapse: separate; // Done so we can round those corners!
   *border-collapse: collapsed; // IE7 can't round corners anyway
-  .border-radius(4px);
+  @include border-radius(4px);
   th + th,
   td + td,
   th + td,

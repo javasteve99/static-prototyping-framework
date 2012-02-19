@@ -1,4 +1,3 @@
-@import 'bourbon/bourbon';      // Temporarily include Bourbon until customized mixins are complete
 @import 'mixins', 'variables';  // Mixins for CSS3 properties and variables should come first
 @import 'reset';                // Reset HTML elements next
 @import 'type';                 // Then set your basic typography up

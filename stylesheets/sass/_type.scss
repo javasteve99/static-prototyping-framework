@@ -19,7 +19,7 @@ p {
   line-height: $lineHeight;
   small {
     font-size: $baseFontSize - 2;
-    color: $textColor;
+    color: $baseColor;
   }
 }
 
@@ -166,18 +166,18 @@ blockquote {
 code,
 pre {
   padding: 0 3px 2px;
-  #font > #family > .monospace;
-  font-size: @baseFontSize - 1;
-  color: @grayDark;
-  .border-radius(3px);
+  font-family: $codeFontFamily;
+  font-size: $baseFontSize - 1;
+  color: $grayDark;
+  @include border-radius(3px);
 }
 
 // Inline code
 code {
   padding: 3px 4px;
-  color: #d14;
-  background-color: #f7f7f9;
-  border: 1px solid #e1e1e8;
+  color: $red;
+  background-color: $grayLightest;
+  border: 1px solid $grayLight;
 }
 
 // Blocks of code
