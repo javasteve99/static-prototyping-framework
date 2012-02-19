@@ -1,0 +1,65 @@
+/* ==========================================================================
+Variables adapted from Twitter Bootstrap
+https://github.com/twitter/bootstrap/
+========================================================================== */
+
+// Grays
+$black:                       #000;
+$grayDarkest:                 #111;
+$grayDarker:                  #222;
+$grayDark:                    #333;
+$gray:                        #555;
+$grayLight:                   #999;
+$grayLighter:                 #eee;
+$grayLightest:                #f5f5f5;
+$white:                       #fff;
+
+// Accent colors
+$blue:                        #049cdb;
+$blueDark:                    #0064cd;
+$green:                       #46a546;
+$red:                         #9d261d;
+$yellow:                      #ffc40d;
+$orange:                      #f89406;
+$pink:                        #c3325f;
+$purple:                      #7a43b6;
+
+// Typography
+$baseFontSize:                13px;
+$lineHeight:                  18px;
+$baseColor:                   $black;
+$headerFontFamily:            "Helvetica Neue", Helvetica, Arial, sans-serif;
+$textFontFamily:              "Helvetica Neue", Helvetica, Arial, sans-serif;
+$linkColor:                   $blueDark;
+$linkColorHover:              darken($linkColor, 15%);
+
+// Buttons
+$primaryButtonBackground:     $linkColor;
+
+// Form states and alerts
+$warningText:                 $yellow;
+$warningBackground:           lighten($yellow, 75%);
+$warningBorder:               lighten($yellow, 50%);
+
+$errorText:                   $red;
+$errorBackground:             lighten($red, 75%);
+$errorBorder:                 lighten($red, 50%);
+
+$successText:                 $green;
+$successBackground:           lighten($green, 75%);
+$successBorder:               lighten($green, 50%);
+
+$infoText:                    $blue;
+$infoBackground:              lighten($blue, 75%);
+$infoBorder:                  lighten($blue, 50%);
+
+// Default 940px grid
+$gridColumns:                 12;
+$gridColumnWidth:             60px;
+$gridGutterWidth:             20px;
+$gridRowWidth:                ($gridColumns * $gridColumnWidth) + ($gridGutterWidth * ($gridColumns - 1));
+
+// Fluid grid
+$fluidGridColumnWidth:        6.382978723%;
+$fluidGridGutterWidth:        2.127659574%;
+

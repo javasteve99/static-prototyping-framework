@@ -1,0 +1,218 @@
+/* ==========================================================================
+Typography adapted from Twitter Bootstrap
+https://github.com/twitter/bootstrap/
+
+Also includes styling for code blocks,
+which is a separate sheet in Bootstrap
+========================================================================== */
+
+// BODY TEXT
+// ---------
+
+body {
+  font-family: $textFontFamily;
+}
+
+p {
+  margin: 0 0 $lineHeight / 2;
+  font-size: $baseFontSize;
+  line-height: $lineHeight;
+  small {
+    font-size: $baseFontSize - 2;
+    color: $textColor;
+  }
+}
+
+// HEADINGS
+// --------
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  font-weight: bold;
+  color: $baseColor;
+  text-rendering: optimizelegibility; // Fix the character spacing for headings
+  small {
+    font-weight: normal;
+    color: lighten($baseColor, 10%);
+  }
+}
+h1 {
+  font-size: 30px;
+  line-height: $lineHeight * 2;
+  small {
+    font-size: 18px;
+  }
+}
+h2 {
+  font-size: 24px;
+  line-height: $lineHeight * 2;
+  small {
+    font-size: 18px;
+  }
+}
+h3 {
+  line-height: $lineHeight * 1.5;
+  font-size: 18px;
+  small {
+    font-size: 14px;
+  }
+}
+h4, h5, h6 {
+  line-height: $lineHeight;
+}
+h4 {
+  font-size: 14px;
+  small {
+    font-size: 12px;
+  }
+}
+h5 {
+  font-size: 12px;
+}
+h6 {
+  font-size: 11px;
+  color: lighten($baseColor, 10%);
+  text-transform: uppercase;
+}
+
+// LISTS
+// -----
+
+// Unordered and Ordered lists
+ul, ol {
+  padding: 0;
+  margin: 0 0 $lineHeight / 2 25px;
+}
+ul ul,
+ul ol,
+ol ol,
+ol ul {
+  margin-bottom: 0;
+}
+ul {
+  list-style: disc;
+}
+ol {
+  list-style: decimal;
+}
+li {
+  line-height: $lineHeight;
+}
+ul.unstyled,
+ol.unstyled {
+  margin-left: 0;
+  list-style: none;
+}
+
+// Description Lists
+dl {
+  margin-bottom: $lineHeight;
+}
+dt,
+dd {
+  line-height: $lineHeight;
+}
+dt {
+  font-weight: bold;
+}
+dd {
+  margin-left: $lineHeight / 2;
+}
+
+// MISC
+// ----
+
+// Horizontal rules
+hr {
+  margin: $lineHeight 0;
+  border: 0;
+  border-top: 1px solid $gray;
+  border-bottom: 1px solid $white;
+}
+
+// Emphasis
+strong {
+  font-weight: bold;
+}
+em {
+  font-style: italic;
+}
+
+// Abbreviations and acronyms
+abbr {
+  font-size: 90%;
+  text-transform: uppercase;
+}
+
+// Blockquotes
+blockquote {
+  padding: 0 0 0 15px;
+  margin: 0 0 $lineHeight;
+  border-left: 5px solid $grayLighter;
+  p {
+    margin-bottom: 0;
+  }
+  small {
+    display: block;
+    line-height: $lineHeight;
+    color: $grayLight;
+    &:before {
+      content: '\2014 \00A0';
+    }
+  }
+}
+
+// Inline and block code styles
+code,
+pre {
+  padding: 0 3px 2px;
+  #font > #family > .monospace;
+  font-size: @baseFontSize - 1;
+  color: @grayDark;
+  .border-radius(3px);
+}
+
+// Inline code
+code {
+  padding: 3px 4px;
+  color: #d14;
+  background-color: #f7f7f9;
+  border: 1px solid #e1e1e8;
+}
+
+// Blocks of code
+pre {
+  display: block;
+  padding: ($lineHeight - 1) / 2;
+  margin: 0 0 $lineHeight / 2;
+  font-size: 12px;
+  line-height: $lineHeight;
+  background-color: $grayLightest;
+  border: 1px solid $grayLight; // fallback for IE7-8
+  border: 1px solid rgba($black, 0.15);
+  @include border-radius(4px);
+  white-space: pre;
+  white-space: pre-wrap;
+  word-break: break-all;
+  word-wrap: break-word;
+
+  // Make prettyprint styles more spaced out for readability
+  &.prettyprint {
+    margin-bottom: $lineHeight;
+  }
+
+  // Account for some code outputs that place code tags in pre tags
+  code {
+    padding: 0;
+    color: inherit;
+    background-color: transparent;
+    border: 0;
+  }
+}
+
+// Enable scrollable blocks of code
+.pre-scrollable {
+  max-height: 340px;
+  overflow-y: scroll;
+}
+
