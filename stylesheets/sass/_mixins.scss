@@ -27,7 +27,9 @@
 // Opacity, extend to IE
 @mixin opacity ($value) {
   opacity: $value;
-  filter: alpha(opacity=($value * 100));
+  -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=($value * 100))"; // IE8
+  filter: alpha(opacity=($value * 100)); // IE5-7
+  zoom: 1; // hacks IE requirement that element be positioned
 }
 
 // Hide from screenreaders and browsers
@@ -48,6 +50,21 @@
   width: 1px;
 }
 
+// User select
+@mixin user-select($select) {
+  -webkit-user-select: $select;
+     -moz-user-select: $select;
+      -ms-user-select: $select;
+       -o-user-select: $select;
+          user-select: $select;
+}
+
+// Resizeable
+@mixin resizable($direction) {
+  // Options: horizontal, vertical, both
+  resize: $direction;
+  overflow: auto; // Safari fix
+}
 
 
 // CSS3 Mixins =========================================================== //
@@ -83,7 +100,7 @@
           animation-name: $full;
 }
 
-@mixin animation-duration ($time-1: 0,
+@mixin animation-duration ($time-1,
   $time-2: false, $time-3: false,
   $time-4: false, $time-5: false,
   $time-6: false, $time-7: false,
@@ -97,7 +114,7 @@
           animation-duration: $full;
 }
 
-@mixin animation-timing-function ($motion-1: ease,
+@mixin animation-timing-function ($motion-1,
 //  ease | linear | ease-in | ease-out | ease-in-out
   $motion-2: false, $motion-3: false,
   $motion-4: false, $motion-5: false,
@@ -112,7 +129,7 @@
           animation-timing-function: $full;
 }
 
-@mixin animation-iteration-count ($value-1: 1,
+@mixin animation-iteration-count ($value-1,
 //  infinite | <number>
   $value-2: false, $value-3: false,
   $value-4: false, $value-5: false,
@@ -127,7 +144,7 @@
           animation-iteration-count: $full;
 }
 
-@mixin animation-direction ($direction-1: normal,
+@mixin animation-direction ($direction-1,
 //  normal | alternate
   $direction-2: false, $direction-3: false,
   $direction-4: false, $direction-5: false,
@@ -142,7 +159,7 @@
           animation-direction: $full;
 }
 
-@mixin animation-play-state ($state-1: running,
+@mixin animation-play-state ($state-1,
 //  running | paused
   $state-2: false, $state-3: false,
   $state-4: false, $state-5: false,
@@ -157,7 +174,7 @@
           animation-play-state: $full;
 }
 
-@mixin animation-delay ($time-1: 0,
+@mixin animation-delay ($time-1,
   $time-2: false, $time-3: false,
   $time-4: false, $time-5: false,
   $time-6: false, $time-7: false,
@@ -171,7 +188,7 @@
           animation-delay: $full;
 }
 
-@mixin animation-fill-mode ($mode-1: none,
+@mixin animation-fill-mode ($mode-1,
   $mode-2: false, $mode-3: false,
   $mode-4: false, $mode-5: false,
   $mode-6: false, $mode-7: false,
@@ -199,7 +216,7 @@
 
 // Background Image ============================================ //
 
-@function linear-gradient($pos: top, $G1: false, $G2: false,
+@function linear-gradient($pos, $G1: false, $G2: false,
                        $G3: false, $G4: false,
                        $G5: false, $G6: false,
                        $G7: false, $G8: false,
@@ -367,26 +384,6 @@
           border-bottom-right-radius: $radii;
 }
 
-@mixin border-top-radius($radii) {
-  @include border-top-left-radius($radii);
-  @include border-top-right-radius($radii);
-}
-
-@mixin border-right-radius($radii) {
-  @include border-top-right-radius($radii);
-  @include border-bottom-right-radius($radii);
-}
-
-@mixin border-bottom-radius($radii) {
-  @include border-bottom-left-radius($radii);
-  @include border-bottom-right-radius($radii);
-}
-
-@mixin border-left-radius($radii) {
-  @include border-top-left-radius($radii);
-  @include border-bottom-left-radius($radii);
-}
-
 
 // Box Shadow ============================================ //
 
@@ -421,28 +418,28 @@
 
 // Columns ============================================ //
 
-@mixin columns($arg: auto) {
+@mixin columns($arg) {
 // <column-count> || <column-width>
   -webkit-columns: $arg;
      -moz-columns: $arg;
           columns: $arg;
 }
 
-@mixin column-count($int: auto) {
+@mixin column-count($int) {
 // auto || integer
   -webkit-column-count: $int;
      -moz-column-count: $int;
           column-count: $int;
 }
 
-@mixin column-gap($length: normal) {
+@mixin column-gap($length) {
 // normal || length
   -webkit-column-gap: $length;
      -moz-column-gap: $length;
           column-gap: $length;
 }
 
-@mixin column-fill($arg: auto) {
+@mixin column-fill($arg) {
 // auto || length
   -webkit-columns-fill: $arg;
      -moz-columns-fill: $arg;
@@ -462,27 +459,27 @@
           column-rule-color: $color;
 }
 
-@mixin column-rule-style($style: none) {
+@mixin column-rule-style($style) {
 // none | hidden | dashed | dotted | double | groove | inset | inset | outset | ridge | solid
   -webkit-column-rule-style: $style;
      -moz-column-rule-style: $style;
           column-rule-style: $style;
 }
 
-@mixin column-rule-width ($width: none) {
+@mixin column-rule-width ($width) {
   -webkit-column-rule-width: $width;
      -moz-column-rule-width: $width;
           column-rule-width: $width;
 }
 
-@mixin column-span($arg: none) {
+@mixin column-span($arg) {
 // none || all
   -webkit-column-span: $arg;
      -moz-column-span: $arg;
           column-span: $arg;
 }
 
-@mixin column-width($length: auto) {
+@mixin column-width($length) {
 // auto || length
   -webkit-column-width: $length;
      -moz-column-width: $length;
@@ -492,7 +489,7 @@
 
 // Flex Box ============================================ //
 
-@mixin box($orient: inline-axis, $pack: start, $align: stretch) {
+@mixin box($orient, $pack, $align) {
   @include display-box;
   @include box-orient($orient);
   @include box-pack($pack);
@@ -505,53 +502,53 @@
   display: box;
 }
 
-@mixin box-orient($orient: inline-axis) {
+@mixin box-orient($orient) {
 // horizontal|vertical|inline-axis|block-axis|inherit
   -webkit-box-orient: $orient;
      -moz-box-orient: $orient;
           box-orient: $orient;
 }
 
-@mixin box-pack($pack: start) {
+@mixin box-pack($pack) {
 // start|end|center|justify
   -webkit-box-pack: $pack;
      -moz-box-pack: $pack;
           box-pack: $pack;
 }
 
-@mixin box-align($align: stretch) {
+@mixin box-align($align) {
 // start|end|center|baseline|stretch
   -webkit-box-align: $align;
      -moz-box-align: $align;
           box-align: $align;
 }
 
-@mixin box-direction($direction: normal) {
+@mixin box-direction($direction) {
 // normal|reverse|inherit
   -webkit-box-direction: $direction;
      -moz-box-direction: $direction;
           box-direction: $direction;
 }
-@mixin box-lines($lines: single) {
+@mixin box-lines($lines) {
 // single|multiple
   -webkit-box-lines: $lines;
      -moz-box-lines: $lines;
           box-lines: $lines;
 }
 
-@mixin box-ordinal-group($integer: 1) {
+@mixin box-ordinal-group($integer) {
   -webkit-box-ordinal-group: $integer;
      -moz-box-ordinal-group: $integer;
           box-ordinal-group: $integer;
 }
 
-@mixin box-flex($value: 0.0) {
+@mixin box-flex($value) {
   -webkit-box-flex: $value;
      -moz-box-flex: $value;
           box-flex: $value;
 }
 
-@mixin box-flex-group($integer: 1) {
+@mixin box-flex-group($integer) {
   -webkit-box-flex-group: $integer;
      -moz-box-flex-group: $integer;
           box-flex-group: $integer;
@@ -630,7 +627,7 @@
 
 // Transform ============================================ //
 
-@mixin transform($property: none) {
+@mixin transform($property) {
 //  none | <transform-function>
   -webkit-transform: $property;
      -moz-transform: $property;
@@ -639,7 +636,7 @@
           transform: $property;
 }
 
-@mixin transform-origin($axes: 50%) {
+@mixin transform-origin($axes) {
 // x-axis - left | center | right  | length | %
 // y-axis - top  | center | bottom | length | %
 // z-axis -                          length
@@ -653,12 +650,7 @@
 
 // Transition ============================================ //
 
-// Shorthand mixin. Supports multiple parentheses-deliminated values for each variable.
-// Example: @include transition (all, 2.0s, ease-in-out);
-//          @include transition ((opacity, width), (1.0s, 2.0s), ease-in, (0, 2s));
-//          @include transition ($property:(opacity, width), $delay: (1.5s, 2.5s));
-
-@mixin transition ($property: all, $duration: 0.15s, $timing-function: ease-out, $delay: 0) {
+@mixin transition ($property, $duration, $timing-function, $delay) {
 
   // Detect # of args passed into each variable
   $length-of-property:        length($property);
@@ -691,8 +683,7 @@
   }
 }
 
-
-@mixin transition-property ($prop-1: all,
+@mixin transition-property ($prop-1,
   $prop-2: false, $prop-3: false,
   $prop-4: false, $prop-5: false,
   $prop-6: false, $prop-7: false,
@@ -708,7 +699,7 @@
           transition-property: $full;
 }
 
-@mixin transition-duration ($time-1: 0,
+@mixin transition-duration ($time-1,
   $time-2: false, $time-3: false,
   $time-4: false, $time-5: false,
   $time-6: false, $time-7: false,
@@ -724,7 +715,7 @@
           transition-duration: $full;
 }
 
-@mixin transition-timing-function ($motion-1: ease,
+@mixin transition-timing-function ($motion-1,
   $motion-2: false, $motion-3: false,
   $motion-4: false, $motion-5: false,
   $motion-6: false, $motion-7: false,
@@ -741,7 +732,7 @@
           transition-timing-function: $full;
 }
 
-@mixin transition-delay ($time-1: 0,
+@mixin transition-delay ($time-1,
   $time-2: false, $time-3: false,
   $time-4: false, $time-5: false,
   $time-6: false, $time-7: false,
