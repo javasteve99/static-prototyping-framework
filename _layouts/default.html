@@ -14,10 +14,14 @@
   <meta name="viewport" content="width=device-width">
   <!-- Place favicon.ico and apple-touch-icon.png in the root directory: mathiasbynens.be/notes/touch-icons -->
   <link rel="stylesheet" href="stylesheets/application.css" />
-  <script src="javascripts/modernizr-2.5.2.min.js"></script>
+  <script src="javascripts/modernizr-2.5.2.min.js"></script><!-- Create your own build: www.modernizr.com/download/ -->
+  <script type="text/javascript" src="http://use.typekit.com/your-typekit-code.js"></script>
+  <script type="text/javascript">
+    html5.shivMethods = false;
+    try{Typekit.load();}catch(e){}
+  </script><!-- Fixes conflict with HTML5 Shiv in Modernizr -->
 </head>
 <body class="{{ page.body-class }}">
-<!--[if lt IE 7]><p class=chromeframe>Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.</p><![endif]-->
 
 {{ content }}
 
