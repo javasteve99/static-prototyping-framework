@@ -2,6 +2,10 @@
 Reset adapted from Twitter Bootstrap
 https://github.com/twitter/bootstrap/
 ========================================================================== */
+html, body {
+  margin: 0;
+  padding: 0; }
+
 article,
 aside,
 details,
@@ -595,7 +599,7 @@ table {
 Buttons adapted from Twitter Bootstrap
 https://github.com/twitter/bootstrap/
 ========================================================================== */
-.btn {
+.btn, .btn-primary {
   display: -moz-inline-box;
   -moz-box-orient: vertical;
   display: inline-block;
@@ -630,13 +634,12 @@ https://github.com/twitter/bootstrap/
   -o-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
   cursor: pointer;
+  text-decoration: none;
   *margin-left: .3em; }
-  .btn:first-child {
+  .btn:first-child, .btn-primary:first-child {
     *margin-left: 0; }
 
-.btn:hover {
-  color: #333333;
-  text-decoration: none;
+.btn:hover, .btn-primary:hover {
   background-color: #e6e6e6;
   background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #e6e6e6), color-stop(100%, #e6e6e6));
   background-image: -webkit-linear-gradient(top, #e6e6e6 0%, #e6e6e6 100%);
@@ -665,13 +668,14 @@ https://github.com/twitter/bootstrap/
   -o-transition-delay: 0;
   transition-delay: 0; }
 
-.btn:focus {
+.btn:focus, .btn-primary:focus {
   outline: thin dotted #333333;
   outline: 5px auto -webkit-focus-ring-color;
   outline-offset: -2px; }
 
-.btn.active,
-.btn:active {
+.btn.active, .active.btn-primary,
+.btn:active,
+.btn-primary:active {
   background-image: none;
   -webkit-box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.05);
   -moz-box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.05);
@@ -682,8 +686,9 @@ https://github.com/twitter/bootstrap/
   background-color: #d9d9d9 e("\9");
   outline: 0; }
 
-.btn.disabled,
-.btn[disabled] {
+.btn.disabled, .disabled.btn-primary,
+.btn[disabled],
+[disabled].btn-primary {
   cursor: default;
   background-image: none;
   background-color: #e6e6e6;
@@ -746,7 +751,45 @@ https://github.com/twitter/bootstrap/
   background-image: -moz-linear-gradient(top, #1b8aff 0%, #0064cd 100%);
   background-image: -ms-linear-gradient(top, #1b8aff 0%, #0064cd 100%);
   background-image: -o-linear-gradient(top, #1b8aff 0%, #0064cd 100%);
-  background-image: linear-gradient(top, #1b8aff 0%, #0064cd 100%); }
+  background-image: linear-gradient(top, #1b8aff 0%, #0064cd 100%);
+  border: 1px solid #0064cd; }
+  .btn-primary:hover {
+    background-color: #0064cd;
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #0064cd), color-stop(100%, #0064cd));
+    background-image: -webkit-linear-gradient(top, #0064cd 0%, #0064cd 100%);
+    background-image: -moz-linear-gradient(top, #0064cd 0%, #0064cd 100%);
+    background-image: -ms-linear-gradient(top, #0064cd 0%, #0064cd 100%);
+    background-image: -o-linear-gradient(top, #0064cd 0%, #0064cd 100%);
+    background-image: linear-gradient(top, #0064cd 0%, #0064cd 100%);
+    -webkit-transition-property: all, 0.1s, linear;
+    -moz-transition-property: all, 0.1s, linear;
+    -ms-transition-property: all, 0.1s, linear;
+    -o-transition-property: all, 0.1s, linear;
+    transition-property: all, 0.1s, linear;
+    -webkit-transition-duration: 0.15s;
+    -moz-transition-duration: 0.15s;
+    -ms-transition-duration: 0.15s;
+    -o-transition-duration: 0.15s;
+    transition-duration: 0.15s;
+    -webkit-transition-timing-function: ease-out;
+    -moz-transition-timing-function: ease-out;
+    -ms-transition-timing-function: ease-out;
+    -o-transition-timing-function: ease-out;
+    transition-timing-function: ease-out;
+    -webkit-transition-delay: 0;
+    -moz-transition-delay: 0;
+    -ms-transition-delay: 0;
+    -o-transition-delay: 0;
+    transition-delay: 0; }
+  .btn-primary.active, .btn-primary:active {
+    background-image: none;
+    -webkit-box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.05);
+    -moz-box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.05);
+    -ms-box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.05);
+    -o-box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.05);
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.05);
+    background-color: #0058b3;
+    outline: 0; }
 
 .btn-warning {
   background-color: #fbb450;
@@ -755,7 +798,45 @@ https://github.com/twitter/bootstrap/
   background-image: -moz-linear-gradient(top, #fbb450 0%, #f89406 100%);
   background-image: -ms-linear-gradient(top, #fbb450 0%, #f89406 100%);
   background-image: -o-linear-gradient(top, #fbb450 0%, #f89406 100%);
-  background-image: linear-gradient(top, #fbb450 0%, #f89406 100%); }
+  background-image: linear-gradient(top, #fbb450 0%, #f89406 100%);
+  border: 1px solid #f89406; }
+  .btn-warning:hover {
+    background-color: #f89406;
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #f89406), color-stop(100%, #f89406));
+    background-image: -webkit-linear-gradient(top, #f89406 0%, #f89406 100%);
+    background-image: -moz-linear-gradient(top, #f89406 0%, #f89406 100%);
+    background-image: -ms-linear-gradient(top, #f89406 0%, #f89406 100%);
+    background-image: -o-linear-gradient(top, #f89406 0%, #f89406 100%);
+    background-image: linear-gradient(top, #f89406 0%, #f89406 100%);
+    -webkit-transition-property: all, 0.1s, linear;
+    -moz-transition-property: all, 0.1s, linear;
+    -ms-transition-property: all, 0.1s, linear;
+    -o-transition-property: all, 0.1s, linear;
+    transition-property: all, 0.1s, linear;
+    -webkit-transition-duration: 0.15s;
+    -moz-transition-duration: 0.15s;
+    -ms-transition-duration: 0.15s;
+    -o-transition-duration: 0.15s;
+    transition-duration: 0.15s;
+    -webkit-transition-timing-function: ease-out;
+    -moz-transition-timing-function: ease-out;
+    -ms-transition-timing-function: ease-out;
+    -o-transition-timing-function: ease-out;
+    transition-timing-function: ease-out;
+    -webkit-transition-delay: 0;
+    -moz-transition-delay: 0;
+    -ms-transition-delay: 0;
+    -o-transition-delay: 0;
+    transition-delay: 0; }
+  .btn-warning.active, .btn-warning:active {
+    background-image: none;
+    -webkit-box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.05);
+    -moz-box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.05);
+    -ms-box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.05);
+    -o-box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.05);
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.05);
+    background-color: #df8505;
+    outline: 0; }
 
 .btn-danger {
   background-color: #d83a2e;
@@ -764,7 +845,45 @@ https://github.com/twitter/bootstrap/
   background-image: -moz-linear-gradient(top, #d83a2e 0%, #9d261d 100%);
   background-image: -ms-linear-gradient(top, #d83a2e 0%, #9d261d 100%);
   background-image: -o-linear-gradient(top, #d83a2e 0%, #9d261d 100%);
-  background-image: linear-gradient(top, #d83a2e 0%, #9d261d 100%); }
+  background-image: linear-gradient(top, #d83a2e 0%, #9d261d 100%);
+  border: 1px solid #9d261d; }
+  .btn-danger:hover {
+    background-color: #9d261d;
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #9d261d), color-stop(100%, #9d261d));
+    background-image: -webkit-linear-gradient(top, #9d261d 0%, #9d261d 100%);
+    background-image: -moz-linear-gradient(top, #9d261d 0%, #9d261d 100%);
+    background-image: -ms-linear-gradient(top, #9d261d 0%, #9d261d 100%);
+    background-image: -o-linear-gradient(top, #9d261d 0%, #9d261d 100%);
+    background-image: linear-gradient(top, #9d261d 0%, #9d261d 100%);
+    -webkit-transition-property: all, 0.1s, linear;
+    -moz-transition-property: all, 0.1s, linear;
+    -ms-transition-property: all, 0.1s, linear;
+    -o-transition-property: all, 0.1s, linear;
+    transition-property: all, 0.1s, linear;
+    -webkit-transition-duration: 0.15s;
+    -moz-transition-duration: 0.15s;
+    -ms-transition-duration: 0.15s;
+    -o-transition-duration: 0.15s;
+    transition-duration: 0.15s;
+    -webkit-transition-timing-function: ease-out;
+    -moz-transition-timing-function: ease-out;
+    -ms-transition-timing-function: ease-out;
+    -o-transition-timing-function: ease-out;
+    transition-timing-function: ease-out;
+    -webkit-transition-delay: 0;
+    -moz-transition-delay: 0;
+    -ms-transition-delay: 0;
+    -o-transition-delay: 0;
+    transition-delay: 0; }
+  .btn-danger.active, .btn-danger:active {
+    background-image: none;
+    -webkit-box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.05);
+    -moz-box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.05);
+    -ms-box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.05);
+    -o-box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.05);
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.05);
+    background-color: #872119;
+    outline: 0; }
 
 .btn-success {
   background-color: #74c474;
@@ -773,7 +892,45 @@ https://github.com/twitter/bootstrap/
   background-image: -moz-linear-gradient(top, #74c474 0%, #46a546 100%);
   background-image: -ms-linear-gradient(top, #74c474 0%, #46a546 100%);
   background-image: -o-linear-gradient(top, #74c474 0%, #46a546 100%);
-  background-image: linear-gradient(top, #74c474 0%, #46a546 100%); }
+  background-image: linear-gradient(top, #74c474 0%, #46a546 100%);
+  border: 1px solid #46a546; }
+  .btn-success:hover {
+    background-color: #46a546;
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #46a546), color-stop(100%, #46a546));
+    background-image: -webkit-linear-gradient(top, #46a546 0%, #46a546 100%);
+    background-image: -moz-linear-gradient(top, #46a546 0%, #46a546 100%);
+    background-image: -ms-linear-gradient(top, #46a546 0%, #46a546 100%);
+    background-image: -o-linear-gradient(top, #46a546 0%, #46a546 100%);
+    background-image: linear-gradient(top, #46a546 0%, #46a546 100%);
+    -webkit-transition-property: all, 0.1s, linear;
+    -moz-transition-property: all, 0.1s, linear;
+    -ms-transition-property: all, 0.1s, linear;
+    -o-transition-property: all, 0.1s, linear;
+    transition-property: all, 0.1s, linear;
+    -webkit-transition-duration: 0.15s;
+    -moz-transition-duration: 0.15s;
+    -ms-transition-duration: 0.15s;
+    -o-transition-duration: 0.15s;
+    transition-duration: 0.15s;
+    -webkit-transition-timing-function: ease-out;
+    -moz-transition-timing-function: ease-out;
+    -ms-transition-timing-function: ease-out;
+    -o-transition-timing-function: ease-out;
+    transition-timing-function: ease-out;
+    -webkit-transition-delay: 0;
+    -moz-transition-delay: 0;
+    -ms-transition-delay: 0;
+    -o-transition-delay: 0;
+    transition-delay: 0; }
+  .btn-success.active, .btn-success:active {
+    background-image: none;
+    -webkit-box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.05);
+    -moz-box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.05);
+    -ms-box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.05);
+    -o-box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.05);
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.05);
+    background-color: #006700;
+    outline: 0; }
 
 .btn-info {
   background-color: #30c0fb;
@@ -782,7 +939,45 @@ https://github.com/twitter/bootstrap/
   background-image: -moz-linear-gradient(top, #30c0fb 0%, #049cdb 100%);
   background-image: -ms-linear-gradient(top, #30c0fb 0%, #049cdb 100%);
   background-image: -o-linear-gradient(top, #30c0fb 0%, #049cdb 100%);
-  background-image: linear-gradient(top, #30c0fb 0%, #049cdb 100%); }
+  background-image: linear-gradient(top, #30c0fb 0%, #049cdb 100%);
+  border: 1px solid #049cdb; }
+  .btn-info:hover {
+    background-color: #049cdb;
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #049cdb), color-stop(100%, #049cdb));
+    background-image: -webkit-linear-gradient(top, #049cdb 0%, #049cdb 100%);
+    background-image: -moz-linear-gradient(top, #049cdb 0%, #049cdb 100%);
+    background-image: -ms-linear-gradient(top, #049cdb 0%, #049cdb 100%);
+    background-image: -o-linear-gradient(top, #049cdb 0%, #049cdb 100%);
+    background-image: linear-gradient(top, #049cdb 0%, #049cdb 100%);
+    -webkit-transition-property: all, 0.1s, linear;
+    -moz-transition-property: all, 0.1s, linear;
+    -ms-transition-property: all, 0.1s, linear;
+    -o-transition-property: all, 0.1s, linear;
+    transition-property: all, 0.1s, linear;
+    -webkit-transition-duration: 0.15s;
+    -moz-transition-duration: 0.15s;
+    -ms-transition-duration: 0.15s;
+    -o-transition-duration: 0.15s;
+    transition-duration: 0.15s;
+    -webkit-transition-timing-function: ease-out;
+    -moz-transition-timing-function: ease-out;
+    -ms-transition-timing-function: ease-out;
+    -o-transition-timing-function: ease-out;
+    transition-timing-function: ease-out;
+    -webkit-transition-delay: 0;
+    -moz-transition-delay: 0;
+    -ms-transition-delay: 0;
+    -o-transition-delay: 0;
+    transition-delay: 0; }
+  .btn-info.active, .btn-info:active {
+    background-image: none;
+    -webkit-box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.05);
+    -moz-box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.05);
+    -ms-box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.05);
+    -o-box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.05);
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.05);
+    background-color: #048ac2;
+    outline: 0; }
 
 .btn-inverse {
   background-color: #484848;
@@ -791,22 +986,112 @@ https://github.com/twitter/bootstrap/
   background-image: -moz-linear-gradient(top, #484848 0%, #222222 100%);
   background-image: -ms-linear-gradient(top, #484848 0%, #222222 100%);
   background-image: -o-linear-gradient(top, #484848 0%, #222222 100%);
-  background-image: linear-gradient(top, #484848 0%, #222222 100%); }
+  background-image: linear-gradient(top, #484848 0%, #222222 100%);
+  border: 1px solid #222222; }
+  .btn-inverse:hover {
+    background-color: #222222;
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #222222), color-stop(100%, #222222));
+    background-image: -webkit-linear-gradient(top, #222222 0%, #222222 100%);
+    background-image: -moz-linear-gradient(top, #222222 0%, #222222 100%);
+    background-image: -ms-linear-gradient(top, #222222 0%, #222222 100%);
+    background-image: -o-linear-gradient(top, #222222 0%, #222222 100%);
+    background-image: linear-gradient(top, #222222 0%, #222222 100%);
+    -webkit-transition-property: all, 0.1s, linear;
+    -moz-transition-property: all, 0.1s, linear;
+    -ms-transition-property: all, 0.1s, linear;
+    -o-transition-property: all, 0.1s, linear;
+    transition-property: all, 0.1s, linear;
+    -webkit-transition-duration: 0.15s;
+    -moz-transition-duration: 0.15s;
+    -ms-transition-duration: 0.15s;
+    -o-transition-duration: 0.15s;
+    transition-duration: 0.15s;
+    -webkit-transition-timing-function: ease-out;
+    -moz-transition-timing-function: ease-out;
+    -ms-transition-timing-function: ease-out;
+    -o-transition-timing-function: ease-out;
+    transition-timing-function: ease-out;
+    -webkit-transition-delay: 0;
+    -moz-transition-delay: 0;
+    -ms-transition-delay: 0;
+    -o-transition-delay: 0;
+    transition-delay: 0; }
+  .btn-inverse.active, .btn-inverse:active {
+    background-image: none;
+    -webkit-box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.05);
+    -moz-box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.05);
+    -ms-box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.05);
+    -o-box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.05);
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.05);
+    background-color: #151515;
+    outline: 0; }
 
-button.btn,
-input[type="submit"].btn {
+button.btn, button.btn-primary,
+button.btn-primary,
+button.btn-warning,
+button.btn-danger,
+button.btn-success,
+button.btn-info,
+button.btn-inverse,
+input[type="submit"].btn,
+input[type="submit"].btn-primary,
+input[type="submit"].btn-primary,
+input[type="submit"].btn-warning,
+input[type="submit"].btn-danger,
+input[type="submit"].btn-success,
+input[type="submit"].btn-info,
+input[type="submit"].btn-inverse {
   *padding-top: 2px;
   *padding-bottom: 2px; }
-  button.btn::-moz-focus-inner,
-  input[type="submit"].btn::-moz-focus-inner {
+  button.btn::-moz-focus-inner, button.btn-primary::-moz-focus-inner,
+  button.btn-primary::-moz-focus-inner,
+  button.btn-warning::-moz-focus-inner,
+  button.btn-danger::-moz-focus-inner,
+  button.btn-success::-moz-focus-inner,
+  button.btn-info::-moz-focus-inner,
+  button.btn-inverse::-moz-focus-inner,
+  input[type="submit"].btn::-moz-focus-inner,
+  input[type="submit"].btn-primary::-moz-focus-inner,
+  input[type="submit"].btn-primary::-moz-focus-inner,
+  input[type="submit"].btn-warning::-moz-focus-inner,
+  input[type="submit"].btn-danger::-moz-focus-inner,
+  input[type="submit"].btn-success::-moz-focus-inner,
+  input[type="submit"].btn-info::-moz-focus-inner,
+  input[type="submit"].btn-inverse::-moz-focus-inner {
     padding: 0;
     border: 0; }
-  button.btn.large,
-  input[type="submit"].btn.large {
+  button.btn.large, button.large.btn-primary,
+  button.btn-primary.large,
+  button.btn-warning.large,
+  button.btn-danger.large,
+  button.btn-success.large,
+  button.btn-info.large,
+  button.btn-inverse.large,
+  input[type="submit"].btn.large,
+  input[type="submit"].large.btn-primary,
+  input[type="submit"].btn-primary.large,
+  input[type="submit"].btn-warning.large,
+  input[type="submit"].btn-danger.large,
+  input[type="submit"].btn-success.large,
+  input[type="submit"].btn-info.large,
+  input[type="submit"].btn-inverse.large {
     *padding-top: 7px;
     *padding-bottom: 7px; }
-  button.btn.small,
-  input[type="submit"].btn.small {
+  button.btn.small, button.small.btn-primary,
+  button.btn-primary.small,
+  button.btn-warning.small,
+  button.btn-danger.small,
+  button.btn-success.small,
+  button.btn-info.small,
+  button.btn-inverse.small,
+  input[type="submit"].btn.small,
+  input[type="submit"].small.btn-primary,
+  input[type="submit"].btn-primary.small,
+  input[type="submit"].btn-warning.small,
+  input[type="submit"].btn-danger.small,
+  input[type="submit"].btn-success.small,
+  input[type="submit"].btn-info.small,
+  input[type="submit"].btn-inverse.small {
     *padding-top: 3px;
     *padding-bottom: 3px; }
 

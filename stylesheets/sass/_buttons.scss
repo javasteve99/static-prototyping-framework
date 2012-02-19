@@ -19,6 +19,7 @@ https://github.com/twitter/bootstrap/
   @include border-radius(4px);
   @include box-shadow(inset 0 1px 0 rgba($white, 0.2), 0 1px 2px rgba($black, 0.05));
   cursor: pointer;
+  text-decoration: none;
   *margin-left: .3em;
   &:first-child {
     *margin-left: 0;
@@ -27,8 +28,6 @@ https://github.com/twitter/bootstrap/
 
 // Hover state
 .btn:hover {
-  color: $grayDark;
-  text-decoration: none;
   @include linear-gradient(top, darken($white, 10%) 0%, darken($white, 10%) 100%);
   @include transition(all 0.1s linear);
 }
@@ -118,30 +117,115 @@ https://github.com/twitter/bootstrap/
   color: rgba($white, 0.75);
 }
 
-// Set the backgrounds
+// Set the individual styles
 // -------------------------
 .btn-primary {
+  @extend .btn;
   @include linear-gradient(top, lighten($blueDark, 15%) 0%, $blueDark 100%);
+  border: 1px solid $blueDark;
+
+  &:hover {
+    @include linear-gradient(top, $blueDark 0%, $blueDark 100%);
+    @include transition(all 0.1s linear);
+  }
+
+  &.active,
+  &:active {
+    background-image: none;
+    @include box-shadow(inset 0 2px 4px rgba($black, 0.15), 0 1px 2px rgba($black, 0.05));
+    background-color: darken($blueDark, 5%);
+    outline: 0;
+  }
 }
 // Warning appears are orange
 .btn-warning {
   @include linear-gradient(top, lighten($orange, 15%) 0%, $orange 100%);
+  border: 1px solid $orange;
+
+  &:hover {
+    @include linear-gradient(top, $orange 0%, $orange 100%);
+    @include transition(all 0.1s linear);
+  }
+
+  &.active,
+  &:active {
+    background-image: none;
+    @include box-shadow(inset 0 2px 4px rgba($black, 0.15), 0 1px 2px rgba($black, 0.05));
+    background-color: darken($orange, 5%);
+    outline: 0;
+  }
 }
 // Danger and error appear as red
 .btn-danger {
   @include linear-gradient(top, lighten($red, 15%) 0%, $red 100%);
+  border: 1px solid $red;
+
+  &:hover {
+    @include linear-gradient(top, $red 0%, $red 100%);
+    @include transition(all 0.1s linear);
+  }
+
+  &.active,
+  &:active {
+    background-image: none;
+    @include box-shadow(inset 0 2px 4px rgba($black, 0.15), 0 1px 2px rgba($black, 0.05));
+    background-color: darken($red, 5%);
+    outline: 0;
+  }
 }
 // Success appears as green
 .btn-success {
   @include linear-gradient(top, lighten($green, 15%) 0%, $green 100%);
+  border: 1px solid $green;
+
+  &:hover {
+    @include linear-gradient(top, $green 0%, $green 100%);
+    @include transition(all 0.1s linear);
+  }
+
+  &.active,
+  &:active {
+    background-image: none;
+    @include box-shadow(inset 0 2px 4px rgba($black, 0.15), 0 1px 2px rgba($black, 0.05));
+    background-color: darken(green, 5%);
+    outline: 0;
+  }
 }
 // Info appears as a neutral blue
 .btn-info {
   @include linear-gradient(top, lighten($blue, 15%) 0%, $blue 100%);
+  border: 1px solid $blue;
+  
+  &:hover {
+    @include linear-gradient(top, $blue 0%, $blue 100%);
+    @include transition(all 0.1s linear);
+  }
+
+  &.active,
+  &:active {
+    background-image: none;
+    @include box-shadow(inset 0 2px 4px rgba($black, 0.15), 0 1px 2px rgba($black, 0.05));
+    background-color: darken($blue, 5%);
+    outline: 0;
+  }
 }
 // Inverse appears as dark gray
 .btn-inverse {
   @include linear-gradient(top, lighten($grayDarker, 15%) 0%, $grayDarker 100%);
+  border: 1px solid $grayDarker;
+
+  &:hover {
+    @include linear-gradient(top, $grayDarker 0%, $grayDarker 100%);
+    @include transition(all 0.1s linear);
+  }
+
+  &.active,
+  &:active {
+    background-image: none;
+    @include box-shadow(inset 0 2px 4px rgba($black, 0.15), 0 1px 2px rgba($black, 0.05));
+    background-color: darken($grayDarker, 5%);
+    outline: 0;
+  }
 }
 
 
@@ -149,7 +233,19 @@ https://github.com/twitter/bootstrap/
 // --------------------------------------------------
 
 button.btn,
-input[type="submit"].btn {
+button.btn-primary,
+button.btn-warning,
+button.btn-danger,
+button.btn-success,
+button.btn-info,
+button.btn-inverse,
+input[type="submit"].btn,
+input[type="submit"].btn-primary,
+input[type="submit"].btn-warning,
+input[type="submit"].btn-danger,
+input[type="submit"].btn-success,
+input[type="submit"].btn-info,
+input[type="submit"].btn-inverse {
 
   // Firefox 3.6 only I believe
   &::-moz-focus-inner {
@@ -169,4 +265,5 @@ input[type="submit"].btn {
     *padding-bottom: 3px;
   }
 }
+
 

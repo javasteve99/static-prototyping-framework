@@ -3,6 +3,11 @@ Reset adapted from Twitter Bootstrap
 https://github.com/twitter/bootstrap/
 ========================================================================== */
 
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
 // Display in IE6-9 and FF3
 // -------------------------
 
