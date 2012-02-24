@@ -32,26 +32,6 @@ $codeFontFamily:              Menlo, Monaco, "Courier New", monospace;
 $linkColor:                   $blueDark;
 $linkColorHover:              darken($linkColor, 15%);
 
-// Buttons
-$primaryButtonBackground:     $linkColor;
-
-// Form states and alerts
-$warningText:                 $yellow;
-$warningBackground:           lighten($yellow, 75%);
-$warningBorder:               lighten($yellow, 50%);
-
-$errorText:                   $red;
-$errorBackground:             lighten($red, 75%);
-$errorBorder:                 lighten($red, 50%);
-
-$successText:                 $green;
-$successBackground:           lighten($green, 75%);
-$successBorder:               lighten($green, 50%);
-
-$infoText:                    $blue;
-$infoBackground:              lighten($blue, 75%);
-$infoBorder:                  lighten($blue, 50%);
-
 // 12 column 940px grid using Bourbon's grid function =========================================================
 $gw-column:                   60px;
 $gw-gutter:                   20px;
@@ -60,7 +40,6 @@ $gw-gutter:                   20px;
 //    width: grid-width(4);         // returns 300px;
 //    margin-left: $gw-gutter;      // returns 20px;
 //  }
-
 
 // Elliot Jay Stocks' Responsive grid using Bourbon's flex grid function ======================================
 // http://elliotjaystocks.com/blog/a-better-photoshop-grid-for-responsive-web-design/
