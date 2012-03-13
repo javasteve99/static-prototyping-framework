@@ -1,12 +1,6 @@
-/* ==========================================================================
-Reset adapted from Twitter Bootstrap
-https://github.com/twitter/bootstrap/
-========================================================================== */
-
-html, body {
-  margin: 0;
-  padding: 0;
-}
+// Reset.scss
+// Adapted from Normalize.css http://github.com/necolas/normalize.css
+// ------------------------------------------------------------------------
 
 // Display in IE6-9 and FF3
 // -------------------------
@@ -30,7 +24,7 @@ section {
 audio,
 canvas,
 video {
-  @include inline-block();
+  display: inline-block;
   *display: inline;
   *zoom: 1;
 }
@@ -52,9 +46,7 @@ html {
 }
 // Focus states
 a:focus {
-  outline: thin dotted $grayDark;
-  outline: 5px auto -webkit-focus-ring-color;
-  outline-offset: -2px;
+  @include tab-focus();
 }
 // Hover & Active
 a:hover,
@@ -132,4 +124,3 @@ textarea {
   overflow: auto; // Remove vertical scrollbar in IE6-9
   vertical-align: top; // Readability and alignment cross-browser
 }
-

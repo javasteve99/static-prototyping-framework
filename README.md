@@ -1,7 +1,7 @@
 Static Prototyping Framework
 ============================
 
-A template for rapid prototyping of static sites and applications. It's built on Jekyll and uses the HTML5 Boilerplate index.html and file structure, a modified subset of Twitter's Bootstrap CSS, and Sass with Bourbon mixins.
+A template for rapid prototyping of static sites and applications. It's built on Jekyll and uses the HTML5 Boilerplate index.html and file structure, a Sass port of Twitter's Bootstrap CSS, and thoughtbot's Bourbon Sass mixins.
 
 Jekyll
 ------
@@ -15,24 +15,18 @@ HTML
 ----
 This project's HTML is based on the best practices advocated by the [HTML5 Boilerplate](http://html5boilerplate.com/) project.
 
-The [Modernizr.js](http://www.modernizr.com/) library is included to support HTML5 elements and feature detection. I've included the default build from HTML5 Boilerplate, but you should probably [build your own custom version](http://www.modernizr.com/download/) to use only the features you want to support.
+The [Modernizr.js](http://www.modernizr.com/) library is included to support HTML5 elements and feature detection. I've included the default development build, but you should probably [build your own custom version](http://www.modernizr.com/download/) to use only the features you want to support.
 
 CSS
 ---
-I've included a stripped-down version of [Bootstrap] (http://twitter.github.com/bootstrap/), Twitter's CSS toolkit. By default Bootstrap is built to work with LESS, but I've modified my version to work with [Sass](http://sass-lang.com/). The modified stylesheets I've included are:
+This project's CSS now runs on [John Long's port of Bootstrap](https://github.com/jlong/sass-twitter-bootstrap) to [Sass](http://sass-lang.com/). Why? Because I like Sass better than LESS, that's why.
 
-* Variables
-* Mixins
-* Reset
-* Type
-* Forms
-* Tables
-* Buttons
+If you prefer LESS, just remove the /stylesheets/sass directory and replace it with Bootstrap's /less directory. This project does not intend to support LESS usage, so if you go that route you're on your own.
 
-These files represent what I would consider the basic default styles for most projects. If you prefer LESS or want more defaults, just remove the /stylesheets/sass directory and replace it with Bootstrap's /less directory. This project does not intend to support LESS usage, so if you go that route you're on your own.
+It should be noted, I changed the bootstrap.scss file name to application.scss to work better with the defaults and aliases I have set up on my own machine. The usage command shown below takes this into account. If you know what you're doing, feel free to change it back when you use this.
 
 ###Bourbon
-[Bourbon](https://github.com/thoughtbot/bourbon) by thoughtbot is included to allow the rapid use of CSS3 properties plus some other nice extras.
+[Bourbon](https://github.com/thoughtbot/bourbon) by thoughtbot is included to allow the rapid use of CSS3. It should be noted that Bootstrap includes its own CSS3 mixins, but I prefer Bourbon's because they are closer to the correct syntax, plus it includes some nice extra functions and mixins.
 
 Artwork directory
 -----------------

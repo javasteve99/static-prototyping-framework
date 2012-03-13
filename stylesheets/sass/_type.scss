@@ -1,23 +1,26 @@
-/* ==========================================================================
-Typography adapted from Twitter Bootstrap
-https://github.com/twitter/bootstrap/
-========================================================================== */
+// Typography.scss
+// Headings, body text, lists, code, and more for a versatile and durable typography system
+// ----------------------------------------------------------------------------------------
+
 
 // BODY TEXT
 // ---------
 
-body {
-  font-family: $textFontFamily;
-}
-
 p {
-  margin: 0 0 $lineHeight / 2;
+  margin: 0 0 $baseLineHeight / 2;
+  font-family: $baseFontFamily;
   font-size: $baseFontSize;
-  line-height: $lineHeight;
+  line-height: $baseLineHeight;
   small {
     font-size: $baseFontSize - 2;
-    color: $baseColor;
+    color: $grayLight;
   }
+}
+.lead {
+  margin-bottom: $baseLineHeight;
+  font-size: 20px;
+  font-weight: 200;
+  line-height: $baseLineHeight * 1.5;
 }
 
 // HEADINGS
@@ -26,36 +29,36 @@ p {
 h1, h2, h3, h4, h5, h6 {
   margin: 0;
   font-weight: bold;
-  color: $baseColor;
+  color: $grayDark;
   text-rendering: optimizelegibility; // Fix the character spacing for headings
   small {
     font-weight: normal;
-    color: lighten($baseColor, 10%);
+    color: $grayLight;
   }
 }
 h1 {
   font-size: 30px;
-  line-height: $lineHeight * 2;
+  line-height: $baseLineHeight * 2;
   small {
     font-size: 18px;
   }
 }
 h2 {
   font-size: 24px;
-  line-height: $lineHeight * 2;
+  line-height: $baseLineHeight * 2;
   small {
     font-size: 18px;
   }
 }
 h3 {
-  line-height: $lineHeight * 1.5;
+  line-height: $baseLineHeight * 1.5;
   font-size: 18px;
   small {
     font-size: 14px;
   }
 }
 h4, h5, h6 {
-  line-height: $lineHeight;
+  line-height: $baseLineHeight;
 }
 h4 {
   font-size: 14px;
@@ -68,9 +71,21 @@ h5 {
 }
 h6 {
   font-size: 11px;
-  color: lighten($baseColor, 10%);
+  color: $grayLight;
   text-transform: uppercase;
 }
+
+// Page header
+.page-header {
+  padding-bottom: $baseLineHeight - 1;
+  margin: $baseLineHeight 0;
+  border-bottom: 1px solid $grayLighter;
+}
+.page-header h1 {
+  line-height: 1;
+}
+
+
 
 // LISTS
 // -----
@@ -78,7 +93,7 @@ h6 {
 // Unordered and Ordered lists
 ul, ol {
   padding: 0;
-  margin: 0 0 $lineHeight / 2 25px;
+  margin: 0 0 $baseLineHeight / 2 25px;
 }
 ul ul,
 ul ol,
@@ -93,7 +108,7 @@ ol {
   list-style: decimal;
 }
 li {
-  line-height: $lineHeight;
+  line-height: $baseLineHeight;
 }
 ul.unstyled,
 ol.unstyled {
@@ -103,17 +118,17 @@ ol.unstyled {
 
 // Description Lists
 dl {
-  margin-bottom: $lineHeight;
+  margin-bottom: $baseLineHeight;
 }
 dt,
 dd {
-  line-height: $lineHeight;
+  line-height: $baseLineHeight;
 }
 dt {
   font-weight: bold;
 }
 dd {
-  margin-left: $lineHeight / 2;
+  margin-left: $baseLineHeight / 2;
 }
 
 // MISC
@@ -121,9 +136,9 @@ dd {
 
 // Horizontal rules
 hr {
-  margin: $lineHeight 0;
+  margin: $baseLineHeight 0;
   border: 0;
-  border-top: 1px solid $gray;
+  border-top: 1px solid $hrBorder;
   border-bottom: 1px solid $white;
 }
 
@@ -134,82 +149,70 @@ strong {
 em {
   font-style: italic;
 }
+.muted {
+  color: $grayLight;
+}
 
 // Abbreviations and acronyms
 abbr {
   font-size: 90%;
   text-transform: uppercase;
+  border-bottom: 1px dotted #ddd;
+  cursor: help;
 }
 
 // Blockquotes
 blockquote {
   padding: 0 0 0 15px;
-  margin: 0 0 $lineHeight;
+  margin: 0 0 $baseLineHeight;
   border-left: 5px solid $grayLighter;
   p {
     margin-bottom: 0;
+    @include font-shorthand(16px,300,$baseLineHeight * 1.25);
   }
   small {
     display: block;
-    line-height: $lineHeight;
+    line-height: $baseLineHeight;
     color: $grayLight;
     &:before {
       content: '\2014 \00A0';
     }
   }
+
+  // Float right with text-align: right
+  &.pull-right {
+    float: right;
+    padding-left: 0;
+    padding-right: 15px;
+    border-left: 0;
+    border-right: 5px solid $grayLighter;
+    p,
+    small {
+      text-align: right;
+    }
+  }
 }
 
-// Inline and block code styles
-code,
-pre {
-  padding: 0 3px 2px;
-  font-family: $codeFontFamily;
-  font-size: $baseFontSize - 1;
-  color: $grayDark;
-  @include border-radius(3px);
+// Quotes
+q:before,
+q:after,
+blockquote:before, 
+blockquote:after {
+  content: "";
 }
 
-// Inline code
-code {
-  padding: 3px 4px;
-  color: $red;
-  background-color: $grayLightest;
-  border: 1px solid $grayLight;
-}
-
-// Blocks of code
-pre {
+// Addresses
+address {
   display: block;
-  padding: ($lineHeight - 1) / 2;
-  margin: 0 0 $lineHeight / 2;
-  font-size: 12px;
-  line-height: $lineHeight;
-  background-color: $grayLightest;
-  border: 1px solid $grayLight; // fallback for IE7-8
-  border: 1px solid rgba($black, 0.15);
-  @include border-radius(4px);
-  white-space: pre;
-  white-space: pre-wrap;
-  word-break: break-all;
-  word-wrap: break-word;
-
-  // Make prettyprint styles more spaced out for readability
-  &.prettyprint {
-    margin-bottom: $lineHeight;
-  }
-
-  // Account for some code outputs that place code tags in pre tags
-  code {
-    padding: 0;
-    color: inherit;
-    background-color: transparent;
-    border: 0;
-  }
+  margin-bottom: $baseLineHeight;
+  line-height: $baseLineHeight;
+  font-style: normal;
 }
 
-// Enable scrollable blocks of code
-.pre-scrollable {
-  max-height: 340px;
-  overflow-y: scroll;
+// Misc
+small {
+  font-size: 100%;
 }
-
+cite {
+  font-style: normal;
+}
