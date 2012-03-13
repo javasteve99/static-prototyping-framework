@@ -1,10 +1,11 @@
 Static Prototyping Framework
 ============================
 
-A template for rapid prototyping of static sites and applications. It's built on Jekyll and uses the HTML5 Boilerplate index.html and file structure, a Sass port of Twitter's Bootstrap CSS, and thoughtbot's Bourbon Sass mixins.
+A template for rapid prototyping of static sites and applications. It's built on Jekyll and uses the HTML5 Boilerplate index.html and file structure, a Sass port of Twitter's Bootstrap CSS, Bootstrap JS, and thoughtbot's Bourbon Sass mixins.
 
 Jekyll
 ------
+
 [Jekyll](https://github.com/mojombo/jekyll) is a blog-aware, static site generator. However, I've include it here for the purpose of writing HTML in a DRY manner. Using Jekyll allows you to use includes so you don't have to maintain multiple instances of the same code blocks. Unlike using PHP includes, Jekyll will output a directory of compiled static HTML files with your include code moved into each page. Using Jekyll also starts a web server on your computer, so you can easily use things like TypeKit that are normally a pain to work with in a local static site.
 
 To use Jekyll, you'll need to [install the gem](https://github.com/mojombo/jekyll/wiki/install) from your Terminal.
@@ -13,12 +14,14 @@ For more information on using Jekyll, read [the guide](https://github.com/mojomb
 
 HTML
 ----
+
 This project's HTML is based on the best practices advocated by the [HTML5 Boilerplate](http://html5boilerplate.com/) project.
 
 The [Modernizr.js](http://www.modernizr.com/) library is included to support HTML5 elements and feature detection. I've included the default development build, but you should probably [build your own custom version](http://www.modernizr.com/download/) to use only the features you want to support.
 
 CSS
 ---
+
 This project's CSS now runs on [John Long's port of Bootstrap](https://github.com/jlong/sass-twitter-bootstrap) to [Sass](http://sass-lang.com/). Why? Because I like Sass better than LESS, that's why.
 
 If you prefer LESS, just remove the /stylesheets/sass directory and replace it with Bootstrap's /less directory. This project does not intend to support LESS usage, so if you go that route you're on your own.
@@ -27,6 +30,11 @@ It should be noted, I changed the bootstrap.scss file name to application.scss t
 
 ###Bourbon
 [Bourbon](https://github.com/thoughtbot/bourbon) by thoughtbot is included to allow the rapid use of CSS3. It should be noted that Bootstrap includes its own CSS3 mixins, but I prefer Bourbon's because they are closer to the correct syntax, plus it includes some nice extra functions and mixins.
+
+JS
+--
+
+All of the [Bootstrap JS](https://github.com/twitter/bootstrap/tree/master/js) plugins are included in the javascripts/plugins.js file. It's pretty heft that way, I'd recommend deleting what you don't use and minifying the rest.
 
 Artwork directory
 -----------------
