@@ -26,7 +26,7 @@ This project's CSS now runs on [John Long's port of Bootstrap](https://github.co
 
 If you prefer LESS, just remove the /stylesheets/sass directory and replace it with Bootstrap's /less directory. This project does not intend to support LESS usage, so if you go that route you're on your own.
 
-It should be noted, I changed the bootstrap.scss file name to application.scss to work better with the defaults and aliases I have set up on my own machine. The usage command shown below takes this into account. If you know what you're doing, feel free to change it back when you use this.
+It should be noted, I changed the bootstrap.scss file name to application.scss to work better with the defaults and aliases I have set up on my own machine. If you know what you're doing, feel free to change it back when you use this.
 
 ###Bourbon
 [Bourbon](https://github.com/thoughtbot/bourbon) by thoughtbot is included to allow the rapid use of CSS3. It should be noted that Bootstrap includes its own CSS3 mixins, but I prefer Bourbon's because they are closer to the correct syntax, plus it includes some nice extra functions and mixins.
