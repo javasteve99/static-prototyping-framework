@@ -1,7 +1,7 @@
 Static Prototyping Framework
 ============================
 
-A template for rapid prototyping of static sites and applications. It's built on Jekyll and uses the HTML5 Boilerplate index.html and file structure, a Sass port of Twitter's Bootstrap CSS, Bootstrap JS, and thoughtbot's Bourbon Sass mixins.
+A template for rapid prototyping of static sites and applications. It's built on Jekyll so you don't have to repeat yourself and uses the HTML5 Boilerplate index.html and file structure, a Sass port of Twitter's Bootstrap CSS, Bootstrap JS, and thoughtbot's Bourbon Sass mixins.
 
 Jekyll
 ------
