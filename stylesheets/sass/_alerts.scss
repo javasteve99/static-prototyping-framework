@@ -1,6 +1,10 @@
 // ALERT STYLES
 // ------------
 
+// Updates for SASS:
+//  - replace $ with $
+//  - replace .border-radius with $include border-radius
+
 // Base alert styles
 .alert {
   padding: 8px 35px 8px 14px;
@@ -9,10 +13,10 @@
   background-color: $warningBackground;
   border: 1px solid $warningBorder;
   @include border-radius(4px);
-}
-.alert,
-.alert-heading {
   color: $warningText;
+}
+.alert-heading {
+  color: inherit;
 }
 
 // Adjust close link position
@@ -28,32 +32,20 @@
 
 .alert-success {
   background-color: $successBackground;
-  border-color: $successBorder;  
-}
-.alert-success,
-.alert-success .alert-heading {
+  border-color: $successBorder;
   color: $successText;
 }
 .alert-danger,
 .alert-error {
   background-color: $errorBackground;
   border-color: $errorBorder;
-}
-.alert-danger,
-.alert-error,
-.alert-danger .alert-heading,
-.alert-error .alert-heading {
   color: $errorText;
 }
 .alert-info {
   background-color: $infoBackground;
   border-color: $infoBorder;
-}
-.alert-info,
-.alert-info .alert-heading {
   color: $infoText;
 }
-
 
 // Block alerts
 // ------------------------

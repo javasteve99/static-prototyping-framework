@@ -1,6 +1,10 @@
 // PAGER
 // -----
 
+// Updates for SASS:
+//  - replace @ with $
+//  - replace . with @include for mixins
+
 .pager {
   margin-left: 0;
   margin-bottom: $baseLineHeight;
@@ -27,4 +31,10 @@
 }
 .pager .previous a {
   float: left;
+}
+.pager .disabled a,
+.pager .disabled a:hover {
+  color: $grayLight;
+  background-color: #fff;
+  cursor: default;
 }

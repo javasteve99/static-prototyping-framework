@@ -1,6 +1,10 @@
 // BUTTON STYLES
 // -------------
 
+// Updates for SASS:
+//  - replace $ with $
+//  - replace . with @include for mixins
+//  - pull complex shadow definitions into variables
 
 // Base styles
 // --------------------------------------------------
@@ -8,25 +12,25 @@
 // Core
 .btn {
   display: inline-block;
+  @include ie7-inline-block();
   padding: 4px 10px 4px;
   margin-bottom: 0; // For input.btn
   font-size: $baseFontSize;
   line-height: $baseLineHeight;
+  *line-height: 20px;
   color: $grayDark;
   text-align: center;
   text-shadow: 0 1px 1px rgba(255,255,255,.75);
   vertical-align: middle;
-  @include buttonBackground($white, darken($white, 10%));
-  border: 1px solid #ccc;
-  border-bottom-color: #bbb;
+  cursor: pointer;
+  @include buttonBackground($btnBackground, $btnBackgroundHighlight);
+  border: 1px solid $btnBorder;
+  *border: 0; // Remove the border to prevent IE7's black border on input:focus
+  border-bottom-color: darken($btnBorder, 10%);
   @include border-radius(4px);
+  @include ie7-restore-left-whitespace(); // Give IE7 some love
   $shadow: inset 0 1px 0 rgba(255,255,255,.2), 0 1px 2px rgba(0,0,0,.05);
   @include box-shadow($shadow);
-  cursor: pointer;
-
-  // Give IE7 some love
-  @include reset-filter();
-  @include ie7-restore-left-whitespace();
 }
 
 // Hover state
@@ -34,6 +38,7 @@
   color: $grayDark;
   text-decoration: none;
   background-color: darken($white, 10%);
+  *background-color: darken($white, 15%); /* Buttons in IE7 don't get borders, so darken on hover */
   background-position: 0 -15px;
 
   // transition is only when going to hover, otherwise the background
@@ -49,20 +54,20 @@
 // Active state
 .btn.active,
 .btn:active {
+  background-color: darken($white, 10%);
+  background-color: darken($white, 15%) \9;
   background-image: none;
+  outline: 0;
   $shadow: inset 0 2px 4px rgba(0,0,0,.15), 0 1px 2px rgba(0,0,0,.05);
   @include box-shadow($shadow);
-  background-color: darken($white, 10%);
-  background-color: darken($white, 15%) #{"\9"};
-  outline: 0;
 }
 
 // Disabled state
 .btn.disabled,
 .btn[disabled] {
   cursor: default;
-  background-image: none;
   background-color: darken($white, 10%);
+  background-image: none;
   @include opacity(65);
   @include box-shadow(none);
 }
@@ -117,8 +122,8 @@
 .btn-info:hover,
 .btn-inverse,
 .btn-inverse:hover {
-  text-shadow: 0 -1px 0 rgba(0,0,0,.25);
   color: $white;
+  text-shadow: 0 -1px 0 rgba(0,0,0,.25);
 }
 // Provide *some* extra contrast for those who can get it
 .btn-primary.active,
@@ -126,34 +131,39 @@
 .btn-danger.active,
 .btn-success.active,
 .btn-info.active,
-.btn-dark.active {
+.btn-inverse.active {
   color: rgba(255,255,255,.75);
 }
 
 // Set the backgrounds
 // -------------------------
+.btn {
+  // reset here as of 2.0.3 due to Recess property order
+  border-color: #ccc;
+  border-color: rgba(0,0,0,.1) rgba(0,0,0,.1) rgba(0,0,0,.25);
+}
 .btn-primary {
-  @include buttonBackground($primaryButtonBackground, adjust-hue($primaryButtonBackground, 20));
+  @include buttonBackground($btnPrimaryBackground, $btnPrimaryBackgroundHighlight);
 }
 // Warning appears are orange
 .btn-warning {
-  @include buttonBackground(lighten($orange, 15%), $orange);
+  @include buttonBackground($btnWarningBackground, $btnWarningBackgroundHighlight);
 }
 // Danger and error appear as red
 .btn-danger {
-  @include buttonBackground(#ee5f5b, #bd362f);
+  @include buttonBackground($btnDangerBackground, $btnDangerBackgroundHighlight);
 }
 // Success appears as green
 .btn-success {
-  @include buttonBackground(#62c462, #51a351);
+  @include buttonBackground($btnSuccessBackground, $btnSuccessBackgroundHighlight);
 }
 // Info appears as a neutral blue
 .btn-info {
-  @include buttonBackground(#5bc0de, #2f96b4);
+  @include buttonBackground($btnInfoBackground, $btnInfoBackgroundHighlight);
 }
 // Inverse appears as dark gray
 .btn-inverse {
-  @include buttonBackground(#454545, #262626);
+  @include buttonBackground($btnInverseBackground, $btnInverseBackgroundHighlight);
 }
 
 
@@ -172,12 +182,16 @@ input[type="submit"].btn {
   // IE7 has some default padding on button controls
   *padding-top: 2px;
   *padding-bottom: 2px;
-  &.large {
+  &.btn-large {
     *padding-top: 7px;
     *padding-bottom: 7px;
   }
-  &.small {
+  &.btn-small {
     *padding-top: 3px;
     *padding-bottom: 3px;
+  }
+  &.btn-mini {
+    *padding-top: 1px;
+    *padding-bottom: 1px;
   }
 }
