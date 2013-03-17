@@ -1,7 +1,7 @@
 Static Prototyping Framework
 ============================
 
-A template for rapid prototyping of static sites and applications. It's built on Jekyll so you don't have to repeat yourself and uses the HTML5 Boilerplate index.html and file structure, a Sass port of Twitter's Bootstrap CSS, Bootstrap JS, and thoughtbot's Bourbon Sass mixins.
+A template for rapid prototyping of static sites and applications. It's built on Jekyll so you don't have to repeat yourself and uses the HTML5 Boilerplate index.html and file structure, a Sass port of Twitter's Bootstrap CSS and Bootstrap's JS plugins.
 
 Jekyll
 ------
@@ -28,13 +28,10 @@ If you prefer LESS, just remove the /stylesheets/sass directory and replace it w
 
 It should be noted, I changed the bootstrap.scss file name to application.scss to work better with the defaults and aliases I have set up on my own machine. If you know what you're doing, feel free to change it back when you use this.
 
-###Bourbon
-[Bourbon](https://github.com/thoughtbot/bourbon) by thoughtbot is included to allow the rapid use of CSS3. It should be noted that Bootstrap includes its own CSS3 mixins, but I prefer Bourbon's because they are closer to the correct syntax, plus it includes some nice extra functions and mixins.
-
 JS
 --
 
-All of the [Bootstrap JS](https://github.com/twitter/bootstrap/tree/master/js) plugins are included in the javascripts/plugins.js file. It's pretty heft that way, I'd recommend deleting what you don't use and minifying the rest.
+All of the [Bootstrap JS](https://github.com/twitter/bootstrap/tree/master/js) plugins are included in the javascripts/plugins.js file. It's pretty hefty that way, I'd recommend deleting what you don't use and minifying the rest.
 
 Artwork directory
 -----------------
@@ -44,9 +41,9 @@ I've included empty PSDs with the proper names and sizes for creating all the ri
 Working with this repo
 ----------------------
 
-To use Sass and require Bourbon, you have to watch your .scss files from the Terminal and compile their output into the application.css file in the /stylesheets directory. To do so, use the Terminal to cd into the root directory of this repo, then run this command:
+To use Sass you have to watch your .scss files from the Terminal and compile their output into the application.css file in the /stylesheets directory. To do so, use the Terminal to cd into the root directory of this repo, then run this command:
 
-<code>sass --watch stylesheets/sass:stylesheets -r ./stylesheets/sass/bourbon/lib/bourbon.rb</code>
+<code>sass --watch stylesheets/sass:stylesheets</code>
 
 Start the Jekyll server by running this command in Terminal from the root directory of this repo:
 
